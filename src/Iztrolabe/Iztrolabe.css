@@ -1,0 +1,13 @@
+.iztro-astrolabe {
+  display: grid;
+  position: relative;
+  width: 100%;
+  grid-gap: 3px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  grid-template-areas:
+    "g3 g4 g5 g6"
+    "g2 ct ct g7"
+    "g1 ct ct g8"
+    "g0 g11 g10 g9";
+}

@@ -29,21 +29,7 @@ const meta: Meta<typeof IztroAstrolabe> = {
       min: 0,
       max: 12,
       reqired: true,
-      options: [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-      ],
+      options: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
     },
     gender: {
       type: "string",
@@ -65,7 +51,7 @@ export default meta;
 type Story = StoryObj<typeof IztroAstrolabe>;
 
 export const Iztrolabe: Story = (args: any) => (
-  <div style={{height: '100vh'}}>
+  <div style={{ height: "100vh" }}>
     <IztroAstrolabe {...args} />
   </div>
 );
@@ -74,7 +60,7 @@ Iztrolabe.args = {
   birthday: "2023-9-4",
   birthTime: 0,
   gender: "female",
-  birthdayType: 'solar',
+  birthdayType: "solar",
   isLeapMonth: false,
   fixLeap: true,
 };

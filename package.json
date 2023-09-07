@@ -42,14 +42,17 @@
     "@storybook/react-webpack5": "^7.4.0",
     "@storybook/testing-library": "^0.2.0",
     "@types/react": "^18.2.21",
+    "node-sass": "^9.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "3.0.0",
+    "sass": "^1.66.1",
+    "scss": "^0.2.4",
     "storybook": "^7.4.0",
     "typescript": "^5.0.1"
   },
   "dependencies": {
-    "iztro": "^1.2.1",
-    "styled-components": "^6.0.7"
+    "classnames": "^2.3.2",
+    "iztro": "^1.2.3"
   }
 }

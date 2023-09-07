@@ -1,100 +1,98 @@
-import React from "react";
-import styled from "styled-components";
-import { vars } from "../config/var";
+import React, { useMemo } from "react";
 import { IzpalaceProps } from "./Izpalace.type";
+import classNames from "classnames";
+import "./Izpalace.css";
 
-type CommonStyle = {
-  align?: string;
-};
+export const Izpalace = ({ index, horoscope, ...palace }: IzpalaceProps) => {
+  const horoscopeNames = useMemo(() => {
+    const horoscopeNames = [];
 
-const StyledIzpalace = styled.div<Pick<IzpalaceProps, "index">>`
-  grid-area: ${(props) => `g${props.index}`};
-  border: 1px solid #000;
-  padding: ${vars.gridGap};
-  display: grid;
-  text-transform: capitalize;
-  grid-template-rows: auto auto 22px 30px 20px;
-  grid-template-columns: 0.8fr 1.4fr 0.8fr;
-  grid-template-areas:
-    "major minor adj"
-    "horo  minor adj"
-    "fate  fate fate"
-    "lft24 sope rgt24"
-    "name dname gz";
-  transition: all 0.25s ease-in-out;
-  grid-auto-flow: column;
-`;
+    if (horoscope?.decadal.index === index) {
+      horoscopeNames.push(
+        `${horoscope.decadal.name}(${horoscope.decadal.heavenlyStem})`
+      );
+    }
 
-const Area = styled.div<{ area: string } & CommonStyle>`
-  grid-area: ${({ area }) => area};
-  text-align: {align ?? left};
-`;
+    if (horoscope?.yearly.index === index) {
+      horoscopeNames.push(
+        `${horoscope.yearly.name}(${horoscope.yearly.heavenlyStem})`
+      );
+    }
 
-const DecorativeStar = styled.div`
-  font-size: ${vars.smallFontSize};
-`;
+    if (horoscope?.monthly.index === index) {
+      horoscopeNames.push(
+        `${horoscope.monthly.name}(${horoscope.monthly.heavenlyStem})`
+      );
+    }
 
-const PalaceName = styled.div`
-  font-size: ${vars.normalFontSize};
-`;
+    if (horoscope?.daily.index === index) {
+      horoscopeNames.push(
+        `${horoscope.daily.name}(${horoscope.daily.heavenlyStem})`
+      );
+    }
 
-const GzName = styled.div`
-  font-size: ${vars.normalFontSize};
-`;
+    if (horoscope?.hourly.index === index) {
+      horoscopeNames.push(
+        `${horoscope.hourly.name}(${horoscope.hourly.heavenlyStem})`
+      );
+    }
 
-const AdjWrapper = styled.div`
-  color: #8c8c8c;
-  font-size: ${vars.smallFontSize};
-  grid-area: other;
-  display: inline-flex;
-  justify-self: flex-end;
-  gap: ${vars.gridGap};
-`;
+    if (horoscope?.age.index === index) {
+      horoscopeNames.push(horoscope.age.name);
+    }
 
-export const Izpalace = ({ index, ...palace }: IzpalaceProps) => {
+    return horoscopeNames;
+  }, [horoscope]);
+
   return (
-    <StyledIzpalace index={index}>
-      <Area area="major">
+    <div
+      className={classNames("iztro-palace")}
+      style={{ gridArea: `g${index}` }}
+    >
+      <div className={classNames("iztro-palace-major")}>
         {palace.majorStars.map((star) => (
           <div key={star.name}>{star.name}</div>
         ))}
-      </Area>
-      <Area area="minor" align="center">
+      </div>
+      <div className={classNames("iztro-palace-minor")}>
         {palace.minorStars.map((star) => (
           <div key={star.name}>{star.name}</div>
         ))}
-      </Area>
-      <Area area="adj" align="right">
-        <AdjWrapper>
-          <div>
-            {palace.adjectiveStars.slice(5).map((star) => (
-              <div key={star.name}>{star.name}</div>
-            ))}
-          </div>
-          <div>
-            {palace.adjectiveStars.slice(0, 5).map((star) => (
-              <div key={star.name}>{star.name}</div>
-            ))}
-          </div>
-        </AdjWrapper>
-      </Area>
-      <Area area="lft24">
-        <DecorativeStar>{palace.changsheng12}</DecorativeStar>
-        <DecorativeStar>{palace.boshi12}</DecorativeStar>
-      </Area>
-      <Area area="rgt24" align="right">
-        <DecorativeStar>{palace.suiqian12}</DecorativeStar>
-        <DecorativeStar>{palace.jiangqian12}</DecorativeStar>
-      </Area>
-      <Area area="name">
-        <PalaceName>{palace.name}</PalaceName>
-      </Area>
-      <Area area="gz" align="right">
-        <GzName>
-          {palace.heavenlyStem}
-          {palace.earthlyBranch}
-        </GzName>
-      </Area>
-    </StyledIzpalace>
+      </div>
+      <div className={classNames("iztro-palace-adj")}>
+        <div>
+          {palace.adjectiveStars.slice(5).map((star) => (
+            <div key={star.name}>{star.name}</div>
+          ))}
+        </div>
+        <div>
+          {palace.adjectiveStars.slice(0, 5).map((star) => (
+            <div key={star.name}>{star.name}</div>
+          ))}
+        </div>
+      </div>
+      <div className={classNames("iztro-palace-fate")}>
+        {horoscopeNames?.map((item) => (
+          <span key={item}>{item}</span>
+        ))}
+      </div>
+      <div className={classNames("iztro-palace-lft24")}>
+        <div>{palace.changsheng12}</div>
+        <div>{palace.boshi12}</div>
+      </div>
+      <div className={classNames("iztro-palace-rgt24")}>
+        <div>{palace.suiqian12}</div>
+        <div>{palace.jiangqian12}</div>
+      </div>
+      <div className={classNames("iztro-palace-scope")}>
+        <div>{palace.ages.join(" ")}</div>
+        <div>{palace.decadal.range.join(" - ")}</div>
+      </div>
+      <div className={classNames("iztro-palace-name")}>{palace.name}</div>
+      <div className={classNames("iztro-palace-gz")}>
+        {palace.heavenlyStem}
+        {palace.earthlyBranch}
+      </div>
+    </div>
   );
 };
