@@ -71,27 +71,57 @@ export const Izpalace = ({ index, horoscope, ...palace }: IzpalaceProps) => {
           ))}
         </div>
       </div>
+      <div className={classNames("iztro-palace-horo-star")}>
+        <div className={classNames("stars")}>
+          {horoscope?.decadal?.stars &&
+            horoscope?.decadal?.stars[index].map((star) => (
+              <span key={star.name}>{star.name}</span>
+            ))}
+        </div>
+        <div className={classNames("stars")}>
+          {horoscope?.yearly?.stars &&
+            horoscope?.yearly?.stars[index].map((star) => (
+              <span key={star.name}>{star.name}</span>
+            ))}
+        </div>
+      </div>
       <div className={classNames("iztro-palace-fate")}>
         {horoscopeNames?.map((item) => (
           <span key={item}>{item}</span>
         ))}
       </div>
-      <div className={classNames("iztro-palace-lft24")}>
-        <div>{palace.changsheng12}</div>
-        <div>{palace.boshi12}</div>
-      </div>
-      <div className={classNames("iztro-palace-rgt24")}>
-        <div>{palace.suiqian12}</div>
-        <div>{palace.jiangqian12}</div>
-      </div>
-      <div className={classNames("iztro-palace-scope")}>
-        <div>{palace.ages.join(" ")}</div>
-        <div>{palace.decadal.range.join(" - ")}</div>
-      </div>
-      <div className={classNames("iztro-palace-name")}>{palace.name}</div>
-      <div className={classNames("iztro-palace-gz")}>
-        {palace.heavenlyStem}
-        {palace.earthlyBranch}
+      <div className={classNames("iztro-palace-footer")}>
+        <div>
+          <div className={classNames("iztro-palace-lft24")}>
+            <div>{palace.changsheng12}</div>
+            <div>{palace.boshi12}</div>
+            <div className={classNames("iztro-palace-name")}>{palace.name}</div>
+          </div>
+        </div>
+        <div>
+          <div className={classNames("iztro-palace-scope")}>
+            <div>{palace.ages.join(" ")}</div>
+            <div>{palace.decadal.range.join(" - ")}</div>
+          </div>
+          <div className={classNames("iztro-palace-dynamic-name")}>
+            <span>{horoscope?.decadal.palaceNames[index]}</span>
+            <span>{horoscope?.yearly.palaceNames[index]}</span>
+            <span>{horoscope?.monthly.palaceNames[index]}</span>
+            <span>{horoscope?.daily.palaceNames[index]}</span>
+            <span>{horoscope?.hourly.palaceNames[index]}</span>
+          </div>
+        </div>
+        <div>
+          <div className={classNames("iztro-palace-rgt24")}>
+            <div>{palace.suiqian12}</div>
+            <div>{palace.jiangqian12}</div>
+          </div>
+
+          <div className={classNames("iztro-palace-gz")}>
+            {palace.heavenlyStem}
+            {palace.earthlyBranch}
+          </div>
+        </div>
       </div>
     </div>
   );

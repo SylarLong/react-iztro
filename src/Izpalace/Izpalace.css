@@ -4,13 +4,12 @@
   display: grid;
   text-transform: capitalize;
   grid-template-rows: auto auto 22px 30px 16px;
-  grid-template-columns: 0.8fr 1.4fr 0.8fr;
+  grid-template-columns: auto auto auto;
   grid-template-areas:
     "major minor adj"
     "horo  horo adj"
     "fate  fate fate"
-    "lft24 scope rgt24"
-    "name dname gz";
+    "ft   ft  ft";
   transition: all 0.25s ease-in-out;
   grid-auto-flow: column;
   font-size: 12px;
@@ -27,9 +26,19 @@
   display: inline-flex;
   justify-self: flex-end;
   gap: 3px;
+  white-space: nowrap;
 }
 .iztro-palace-horo-star {
   grid-area: horo;
+  align-self: center;
+}
+.iztro-palace-horo-star .stars {
+  display: flex;
+  gap: 3px;
+}
+.iztro-palace-scope {
+  white-space: nowrap;
+  text-align: center;
 }
 .iztro-palace-fate {
   grid-area: fate;
@@ -37,27 +46,31 @@
   white-space: nowrap;
   text-align: center;
 }
+
+.iztro-palace-footer {
+  grid-area: ft;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-self: flex-start;
+}
+
 .iztro-palace-lft24 {
-  grid-area: lft24;
-  align-self: flex-end;
+  text-align: left;
 }
-.iztro-palace-scope {
-  grid-area: scope;
-  align-self: flex-end;
-  white-space: nowrap;
-  text-align: center;
-}
+
 .iztro-palace-rgt24 {
-  grid-area: rgt24;
   text-align: right;
-  align-self: flex-end;
 }
 .iztro-palace-name {
-  grid-area: name;
-  align-self: flex-end;
+  cursor: pointer;
 }
 .iztro-palace-gz {
-  grid-area: gz;
   text-align: right;
-  align-self: flex-end;
+}
+.iztro-palace-dynamic-name {
+  text-align: center;
+  display: flex;
+  white-space: nowrap;
+  gap: 3px;
+  justify-content: center;
 }
