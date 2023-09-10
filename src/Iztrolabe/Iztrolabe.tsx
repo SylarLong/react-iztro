@@ -5,6 +5,7 @@ import { IztrolabeProps } from "./Iztrolabe.type";
 import { IzpalaceCenter } from "../IzpalaceCenter";
 import classNames from "classnames";
 import "./Iztrolabe.css";
+import "../theme/default.css";
 
 export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
   const { astrolabe, horoscope } = useIztro({
@@ -19,7 +20,9 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
   console.log(astrolabe, horoscope);
 
   return (
-    <div className={classNames("iztro-astrolabe")}>
+    <div
+      className={classNames("iztro-astrolabe", "iztro-astrolabe-theme-default")}
+    >
       {astrolabe?.palaces.map((palace, index) => {
         return (
           <Izpalace

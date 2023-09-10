@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import { IzpalaceProps } from "./Izpalace.type";
 import classNames from "classnames";
 import "./Izpalace.css";
+import { Izstar } from "../Izstar";
 
 export const Izpalace = ({ index, horoscope, ...palace }: IzpalaceProps) => {
   const horoscopeNames = useMemo(() => {
@@ -51,23 +52,23 @@ export const Izpalace = ({ index, horoscope, ...palace }: IzpalaceProps) => {
     >
       <div className={classNames("iztro-palace-major")}>
         {palace.majorStars.map((star) => (
-          <div key={star.name}>{star.name}</div>
+          <Izstar key={star.name} {...star} />
         ))}
       </div>
       <div className={classNames("iztro-palace-minor")}>
         {palace.minorStars.map((star) => (
-          <div key={star.name}>{star.name}</div>
+          <Izstar key={star.name} {...star} />
         ))}
       </div>
       <div className={classNames("iztro-palace-adj")}>
         <div>
           {palace.adjectiveStars.slice(5).map((star) => (
-            <div key={star.name}>{star.name}</div>
+            <Izstar key={star.name} {...star} />
           ))}
         </div>
         <div>
           {palace.adjectiveStars.slice(0, 5).map((star) => (
-            <div key={star.name}>{star.name}</div>
+            <Izstar key={star.name} {...star} />
           ))}
         </div>
       </div>
@@ -75,13 +76,13 @@ export const Izpalace = ({ index, horoscope, ...palace }: IzpalaceProps) => {
         <div className={classNames("stars")}>
           {horoscope?.decadal?.stars &&
             horoscope?.decadal?.stars[index].map((star) => (
-              <span key={star.name}>{star.name}</span>
+              <Izstar key={star.name} {...star} />
             ))}
         </div>
         <div className={classNames("stars")}>
           {horoscope?.yearly?.stars &&
             horoscope?.yearly?.stars[index].map((star) => (
-              <span key={star.name}>{star.name}</span>
+              <Izstar key={star.name} {...star} />
             ))}
         </div>
       </div>
@@ -95,13 +96,17 @@ export const Izpalace = ({ index, horoscope, ...palace }: IzpalaceProps) => {
           <div className={classNames("iztro-palace-lft24")}>
             <div>{palace.changsheng12}</div>
             <div>{palace.boshi12}</div>
-            <div className={classNames("iztro-palace-name")}>{palace.name}</div>
           </div>
+          <div className={classNames("iztro-palace-name")}>{palace.name}</div>
         </div>
         <div>
           <div className={classNames("iztro-palace-scope")}>
-            <div>{palace.ages.join(" ")}</div>
-            <div>{palace.decadal.range.join(" - ")}</div>
+            <div className={classNames("iztro-palace-scope-age")}>
+              {palace.ages.join(" ")}
+            </div>
+            <div className={classNames("iztro-palace-scope-decadal")}>
+              {palace.decadal.range.join(" - ")}
+            </div>
           </div>
           <div className={classNames("iztro-palace-dynamic-name")}>
             <span>{horoscope?.decadal.palaceNames[index]}</span>

@@ -1,10 +1,9 @@
 .iztro-palace {
-  border: 1px solid;
   padding: 3px;
   display: grid;
   text-transform: capitalize;
-  grid-template-rows: auto auto 22px 30px 16px;
-  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto 50px;
+  grid-template-columns: repeat(3, 1fr);
   grid-template-areas:
     "major minor adj"
     "horo  horo adj"
@@ -12,14 +11,13 @@
     "ft   ft  ft";
   transition: all 0.25s ease-in-out;
   grid-auto-flow: column;
-  font-size: 12px;
 }
 .iztro-palace-major {
   grid-area: major;
 }
 .iztro-palace-minor {
   grid-area: minor;
-  text-align: center;
+  justify-self: center;
 }
 .iztro-palace-adj {
   grid-area: adj;
@@ -40,11 +38,16 @@
   white-space: nowrap;
   text-align: center;
 }
+.iztro-palace-scope-decadal {
+  font-weight: 700;
+}
 .iztro-palace-fate {
   grid-area: fate;
   align-self: flex-end;
   white-space: nowrap;
-  text-align: center;
+  justify-content: center;
+  display: flex;
+  gap: 3px;
 }
 
 .iztro-palace-footer {

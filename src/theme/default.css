@@ -1,0 +1,106 @@
+.iztro-astrolabe-theme-default {
+  --iztro-star-font-size-big: 13px;
+  --iztro-star-font-size-small: 12px;
+  --iztro-color-major: #531dab;
+  --iztro-color-tough: #612500;
+  --iztro-color-awesome: #d4380d;
+  --iztro-color-active: #1890ff;
+  --iztro-color-happy: #c41d7f;
+  --iztro-color-nice: #237804;
+  --iztro-color-decorator-1: #90983c;
+  --iztro-color-decorator-2: #813359;
+  --iztro-color-text: #8c8c8c;
+  --iztro-color-border: #00152912;
+}
+
+.iztro-palace {
+  border: 1px solid var(--iztro-color-border);
+}
+
+.iztro-star-soft,
+.iztro-star-tough,
+.iztro-star-adjective,
+.iztro-star-flower,
+.iztro-star-helper,
+.iztro-palace-fate,
+.iztro-palace-horo-star,
+.iztro-palace-scope,
+.iztro-palace-dynamic-name,
+.iztro-palace-lft24,
+.iztro-palace-rgt24 {
+  font-size: var(--iztro-star-font-size-small);
+  font-weight: normal;
+}
+
+.iztro-palace-scope-age,
+.iztro-palace-scope-decadal {
+  color: var(--iztro-color-text);
+}
+
+.iztro-palace-lft24 {
+  color: var(--iztro-color-decorator-1);
+}
+.iztro-palace-rgt24 {
+  color: var(--iztro-color-decorator-2);
+}
+
+.iztro-star-major,
+.iztro-star-tianma,
+.iztro-star-lucun,
+.iztro-palace-name,
+.iztro-palace-gz {
+  font-size: var(--iztro-star-font-size-big);
+  font-weight: bold;
+}
+
+.iztro-star-tianma {
+  color: var(--iztro-color-active);
+}
+.iztro-star-lucun {
+  color: var(--iztro-color-awesome);
+}
+
+.iztro-palace-horo-star .iztro-star {
+  opacity: 0.75;
+}
+.iztro-palace-horo-star .iztro-star-tianma,
+.iztro-palace-horo-star .iztro-star-lucun {
+  font-weight: normal;
+  font-size: var(--iztro-star-font-size-small);
+}
+
+.iztro-star-brightness,
+.iztro-star-adjective {
+  font-style: normal;
+  font-weight: normal;
+  color: var(--iztro-color-text);
+}
+
+.iztro-star-brightness {
+  opacity: 0.5;
+}
+
+.iztro-star-major,
+.iztro-star-soft,
+.iztro-palace-name {
+  color: var(--iztro-color-major);
+}
+.iztro-star-tough {
+  color: var(--iztro-color-tough);
+}
+.iztro-star-flower {
+  color: var(--iztro-color-happy);
+}
+.iztro-star-helper,
+.iztro-palace-gz {
+  color: var(--iztro-color-nice);
+}
+
+.iztro-palace-fate span {
+  display: block;
+  padding: 0 3px;
+  border-radius: 4px;
+  color: #fff;
+  background-color: var(--iztro-color-major);
+  cursor: pointer;
+}
