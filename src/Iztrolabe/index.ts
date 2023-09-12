@@ -1,2 +1,2 @@
-export * from './Iztrolabe'
-export * from './Iztrolabe.type'
+export * from "./Iztrolabe";
+export * from "./Iztrolabe.type";

@@ -97,7 +97,12 @@ export const Izpalace = ({ index, horoscope, ...palace }: IzpalaceProps) => {
             <div>{palace.changsheng12}</div>
             <div>{palace.boshi12}</div>
           </div>
-          <div className={classNames("iztro-palace-name")}>{palace.name}</div>
+          <div className={classNames("iztro-palace-name")}>
+            {palace.name}
+            {palace.isBodyPalace && (
+              <span className={classNames("iztro-palace-name-body")}>·身</span>
+            )}
+          </div>
         </div>
         <div>
           <div className={classNames("iztro-palace-scope")}>
@@ -108,13 +113,13 @@ export const Izpalace = ({ index, horoscope, ...palace }: IzpalaceProps) => {
               {palace.decadal.range.join(" - ")}
             </div>
           </div>
-          <div className={classNames("iztro-palace-dynamic-name")}>
+          {/* <div className={classNames("iztro-palace-dynamic-name")}>
             <span>{horoscope?.decadal.palaceNames[index]}</span>
             <span>{horoscope?.yearly.palaceNames[index]}</span>
             <span>{horoscope?.monthly.palaceNames[index]}</span>
             <span>{horoscope?.daily.palaceNames[index]}</span>
             <span>{horoscope?.hourly.palaceNames[index]}</span>
-          </div>
+          </div> */}
         </div>
         <div>
           <div className={classNames("iztro-palace-rgt24")}>

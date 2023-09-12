@@ -1,1 +1,1 @@
-export * from './Izpalace';
+export * from "./Izpalace";

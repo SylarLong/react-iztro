@@ -1,17 +1,27 @@
 {
   "name": "react-iztro",
-  "version": "1.0.0",
-  "description": "react component of iztro",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
+  "version": "0.0.1",
+  "description": "基于iztro实现的react紫微斗数星盘组件。A react component used to generate an astrolabe of ziweidoushu based on iztro.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
+    "lint": "eslint . --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
     "storybook": "storybook dev -p 6006",
-    "build:src": "rollup -c --bundleConfigAsCjs",
+    "clean": "rimraf lib/",
+    "copy-files": "copyfiles -u 1 src/**/*.css lib/",
+    "build": "npm run clean && tsc && npm run copy-files",
     "build:sb": "storybook build",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
+  "files": [
+    "lib/**/*"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SylarLong/react-iztro.git"
@@ -19,19 +29,22 @@
   "keywords": [
     "iztro",
     "ziweidoushu",
-    "紫微斗数"
+    "紫微斗数",
+    "astrolabe",
+    "astrology",
+    "horoscope"
   ],
   "author": "SylarLong",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SylarLong/react-iztro/issues"
+    "url": "https://github.com/SylarLong/react-iztro/issues",
+    "email": "sylarlong@gmail.com"
   },
-  "homepage": "https://github.com/SylarLong/react-iztro#readme",
+  "homepage": "https://docs.iztro.com",
   "devDependencies": {
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
-    "@rollup/plugin-node-resolve": "^15.2.1",
     "@storybook/addon-essentials": "^7.4.0",
     "@storybook/addon-interactions": "^7.4.0",
     "@storybook/addon-links": "^7.4.0",
@@ -42,12 +55,12 @@
     "@storybook/react-webpack5": "^7.4.0",
     "@storybook/testing-library": "^0.2.0",
     "@types/react": "^18.2.21",
-    "node-sass": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.0",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.49.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "rollup": "3.0.0",
-    "sass": "^1.66.1",
-    "scss": "^0.2.4",
+    "rimraf": "^5.0.1",
     "storybook": "^7.4.0",
     "typescript": "^5.0.1"
   },

@@ -96,6 +96,11 @@
   color: var(--iztro-color-nice);
 }
 
+.iztro-palace-name-body {
+  font-size: var(--iztro-star-font-size-small);
+  font-weight: normal;
+}
+
 .iztro-palace-fate span {
   display: block;
   padding: 0 3px;

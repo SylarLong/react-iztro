@@ -25,7 +25,7 @@ type ConcatLargestUntilDone<
       [...R[0], ...B]
     >;
 
-type Replace<R extends any[], T> = { [K in keyof R]: T };
+type Replace<R extends number[], T> = { [K in keyof R]: T };
 
 type TupleOf<T, N extends number> = number extends N
   ? T[]

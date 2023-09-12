@@ -33,7 +33,7 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
           />
         );
       })}
-      <IzpalaceCenter />
+      <IzpalaceCenter astrolabe={astrolabe} />
     </div>
   );
 };

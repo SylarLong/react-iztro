@@ -1,1 +1,1 @@
-export * from './IzpalaceCenter'
+export * from "./IzpalaceCenter";

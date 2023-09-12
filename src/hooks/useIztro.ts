@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { IztroInput, RangeOfNumber } from "../config/types";
 import { Horoscope } from "iztro/lib/data/types";
 
-export const useIztro = (input: IztroInput) => {
+export function useIztro(input: IztroInput) {
   const _currentDate = new Date();
   const _currentHour = _currentDate.getHours();
   const [astrolabe, _setAstrolabe] = useState<FunctionalAstrolabe>();
@@ -73,4 +73,4 @@ export const useIztro = (input: IztroInput) => {
     horoscope,
     setHoroscope,
   };
-};
+}

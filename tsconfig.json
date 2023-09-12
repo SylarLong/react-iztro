@@ -1,21 +1,17 @@
 {
   "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
-    "strict": true,
-    "skipLibCheck": true,
     "jsx": "react",
-    "module": "ESNext",
     "declaration": true,
-    "declarationDir": "types",
-    "sourceMap": true,
-    "outDir": "dist",
-    "moduleResolution": "node",
-    "emitDeclarationOnly": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true
+    "outDir": "./lib",
+    "strict": true
   },
+  "include": ["src"],
   "exclude": [
-    "dist",
+    "lib",
     "node_modules",
     "src/**/*.test.tsx",
     "src/**/*.stories.tsx"
