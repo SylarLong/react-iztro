@@ -109,3 +109,16 @@
   background-color: var(--iztro-color-major);
   cursor: pointer;
 }
+
+.iztro-palace-center-item {
+  font-size: var(--iztro-star-font-size-small);
+  line-height: 22px;
+}
+
+.iztro-palace-center-item label {
+  color: var(--iztro-color-text);
+}
+
+.iztro-palace-center-item span {
+  color: var(--iztro-color-decorator-1);
+}

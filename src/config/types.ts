@@ -1,5 +1,3 @@
-import { GenderName } from "iztro/lib/i18n";
-
 type BuildPowersOf2LengthArrays<
   N extends number,
   R extends never[][]
@@ -42,15 +40,6 @@ type RangeOf<N extends number> = Partial<TupleOf<unknown, N>>["length"];
 export type RangeOfNumber<From extends number, To extends number> =
   | Exclude<RangeOf<To>, RangeOf<From>>
   | From;
-
-export type IztroInput = {
-  birthday: string;
-  birthTime: RangeOfNumber<0, 12>;
-  gender: GenderName;
-  birthdayType: "lunar" | "solar";
-  isLeapMonth?: boolean;
-  fixLeap?: boolean;
-};
 
 export type NestedProps = {
   children?: React.ReactNode;

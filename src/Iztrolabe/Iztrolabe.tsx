@@ -1,9 +1,9 @@
 import React from "react";
-import { useIztro } from "../hooks";
 import { Izpalace } from "../Izpalace/Izpalace";
 import { IztrolabeProps } from "./Iztrolabe.type";
 import { IzpalaceCenter } from "../IzpalaceCenter";
 import classNames from "classnames";
+import { useIztro } from "iztro-hook";
 import "./Iztrolabe.css";
 import "../theme/default.css";
 

@@ -1,28 +1,74 @@
 import classNames from "classnames";
-import React from "react";
-import "./IzpalaceCenter.css";
+import React, { useMemo } from "react";
 import FunctionalAstrolabe from "iztro/lib/astro/FunctionalAstrolabe";
+import { Item, ItemProps } from "./Item";
+import "./IzpalaceCenter.css";
+import { Line } from "./Line";
+import { fixEarthlyBranchIndex } from "iztro/lib/utils";
 
 type IzpalaceCenterProps = {
   astrolabe?: FunctionalAstrolabe;
 };
 
 export const IzpalaceCenter = ({ astrolabe }: IzpalaceCenterProps) => {
+  const records: ItemProps[] = useMemo(
+    () => [
+      {
+        title: "四柱：",
+        content: astrolabe?.chineseDate,
+      },
+      {
+        title: "阳历：",
+        content: astrolabe?.solarDate,
+      },
+      {
+        title: "农历：",
+        content: astrolabe?.lunarDate,
+      },
+      {
+        title: "时辰：",
+        content: `${astrolabe?.time}(${astrolabe?.timeRange})`,
+      },
+      {
+        title: "生肖：",
+        content: astrolabe?.zodiac,
+      },
+      {
+        title: "星座：",
+        content: astrolabe?.sign,
+      },
+      {
+        title: "命主：",
+        content: astrolabe?.soul,
+      },
+      {
+        title: "身主：",
+        content: astrolabe?.body,
+      },
+      {
+        title: "命宫：",
+        content: astrolabe?.earthlyBranchOfSoulPalace,
+      },
+      {
+        title: "身宫：",
+        content: astrolabe?.earthlyBranchOfBodyPalace,
+      },
+    ],
+    [astrolabe]
+  );
+
   return (
     <div className={classNames("iztro-center-palace")}>
+      {astrolabe?.earthlyBranchOfSoulPalace && (
+        <Line
+          soulIndex={fixEarthlyBranchIndex(astrolabe.earthlyBranchOfSoulPalace)}
+        />
+      )}
+
       <ul>
-        <li>四柱：{astrolabe?.chineseDate}</li>
-        <li>阳历：{astrolabe?.solarDate}</li>
-        <li>农历：{astrolabe?.lunarDate}</li>
-        <li>
-          时辰：{astrolabe?.time}({astrolabe?.timeRange})
-        </li>
-        <li>生肖：{astrolabe?.zodiac}</li>
-        <li>星座：{astrolabe?.sign}</li>
-        <li>命主：{astrolabe?.soul}</li>
-        <li>身主：{astrolabe?.body}</li>
-        <li>命宫：{astrolabe?.earthlyBranchOfSoulPalace}</li>
-        <li>身宫：{astrolabe?.earthlyBranchOfBodyPalace}</li>
+        {records.map((rec, idx) => (
+          <Item key={idx} {...rec} />
+        ))}
       </ul>
       <a
         className="iztro-copyright"
