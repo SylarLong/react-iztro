@@ -1,7 +1,8 @@
 # react-iztro
 react component of iztro
 
-<img width="1147" alt="image" src="https://github.com/SylarLong/react-iztro/assets/6510425/df940fcc-2cda-434f-b9a2-fbcf21c31c24">
+<img width="966" alt="image" src="https://github.com/SylarLong/react-iztro/assets/6510425/f4335997-fdd8-42e2-bb1a-600942f9b0ba">
+
 
 ### 安装
 
