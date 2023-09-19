@@ -17,8 +17,6 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
     isLeapMonth: props.isLeapMonth,
   });
 
-  console.log(astrolabe, horoscope);
-
   return (
     <div
       className={classNames("iztro-astrolabe", "iztro-astrolabe-theme-default")}
