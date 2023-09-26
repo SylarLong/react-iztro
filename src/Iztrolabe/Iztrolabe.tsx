@@ -15,6 +15,7 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
     birthdayType: props.birthdayType,
     fixLeap: props.fixLeap,
     isLeapMonth: props.isLeapMonth,
+    lang: props.lang,
   });
 
   return (

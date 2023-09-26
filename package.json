@@ -68,7 +68,7 @@
   "dependencies": {
     "classnames": "^2.3.2",
     "iztro": "^1.2.4",
-    "iztro-hook": "^0.1.1"
+    "iztro-hook": "^1.1.0"
   },
   "resolutions": {
     "jackspeak": "2.1.1"

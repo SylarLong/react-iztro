@@ -44,6 +44,21 @@ const meta: Meta<typeof IztroAstrolabe> = {
     },
     isLeapMonth: { type: "boolean", if: { arg: "birthdayType", eq: "lunar" } },
     fixLeap: { type: "boolean" },
+    lang: {
+      type: "string",
+      control: {
+        type: "select",
+        labels: {
+          0: "简体中文",
+          1: "繁体中文",
+          2: "日语",
+          3: "韩语",
+          4: "英语",
+          5: "越南语",
+        },
+      },
+      options: ["zh-CN", "zh-TW", "ja-JP", "ko-KR", "en-US", "vi-VN"],
+    },
   },
 };
 export default meta;
