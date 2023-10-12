@@ -11,3 +11,29 @@
     "g1 ct ct g8"
     "g0 g11 g10 g9";
 }
+
+.iztro-star-mutagen {
+  font-weight: normal;
+  font-size: var(--iztro-star-font-size-small);
+  border-radius: 30%;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 1px;
+  padding: 0 2px;
+}
+
+.iztro-star-mutagen.mutagen-0 {
+  background-color: var(--iztro-color-happy);
+}
+
+.iztro-star-mutagen.mutagen-1 {
+  background-color: var(--iztro-color-quan);
+}
+
+.iztro-star-mutagen.mutagen-2 {
+  background-color: var(--iztro-color-nice);
+}
+.iztro-star-mutagen.mutagen-3 {
+  background-color: var(--iztro-color-focus);
+}

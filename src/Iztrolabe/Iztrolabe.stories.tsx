@@ -1,6 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Iztrolabe as IztroAstrolabe } from "./Iztrolabe";
+import { IztrolabeProps } from "./Iztrolabe.type";
 
 const meta: Meta<typeof IztroAstrolabe> = {
   component: IztroAstrolabe,
@@ -65,7 +66,7 @@ export default meta;
 
 type Story = StoryObj<typeof IztroAstrolabe>;
 
-export const Iztrolabe: Story = (args: any) => (
+export const Iztrolabe: Story = (args: IztrolabeProps) => (
   <div style={{ height: "100vh" }}>
     <IztroAstrolabe {...args} />
   </div>
