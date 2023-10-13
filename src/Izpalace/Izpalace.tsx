@@ -3,6 +3,7 @@ import { IzpalaceProps } from "./Izpalace.type";
 import classNames from "classnames";
 import "./Izpalace.css";
 import { Izstar } from "../Izstar";
+import { t } from "iztro/lib/i18n";
 
 export const Izpalace = ({ index, horoscope, ...palace }: IzpalaceProps) => {
   const horoscopeNames = useMemo(() => {
@@ -100,7 +101,9 @@ export const Izpalace = ({ index, horoscope, ...palace }: IzpalaceProps) => {
           <div className={classNames("iztro-palace-name")}>
             {palace.name}
             {palace.isBodyPalace && (
-              <span className={classNames("iztro-palace-name-body")}>·身</span>
+              <span className={classNames("iztro-palace-name-body")}>
+                ·{t("bodyPalace")}
+              </span>
             )}
           </div>
         </div>
