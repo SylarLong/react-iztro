@@ -15,7 +15,7 @@
 .iztro-star-mutagen {
   font-weight: normal;
   font-size: var(--iztro-star-font-size-small);
-  border-radius: 30%;
+  border-radius: 4px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
@@ -24,7 +24,7 @@
 }
 
 .iztro-star-mutagen.mutagen-0 {
-  background-color: var(--iztro-color-happy);
+  background-color: var(--iztro-color-awesome);
 }
 
 .iztro-star-mutagen.mutagen-1 {
