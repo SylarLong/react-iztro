@@ -4,8 +4,15 @@ import classNames from "classnames";
 import "./Izpalace.css";
 import { Izstar } from "../Izstar";
 import { t } from "iztro/lib/i18n";
+import { fixIndex } from "iztro/lib/utils";
 
-export const Izpalace = ({ index, horoscope, ...palace }: IzpalaceProps) => {
+export const Izpalace = ({
+  index,
+  focusedIndex,
+  onFocused,
+  horoscope,
+  ...palace
+}: IzpalaceProps) => {
   const horoscopeNames = useMemo(() => {
     const horoscopeNames = [];
 
@@ -48,8 +55,16 @@ export const Izpalace = ({ index, horoscope, ...palace }: IzpalaceProps) => {
 
   return (
     <div
-      className={classNames("iztro-palace")}
+      className={classNames("iztro-palace", {
+        "focused-palace": focusedIndex === index,
+        "opposite-palace": focusedIndex && index === fixIndex(focusedIndex + 6),
+        "surrounded-palace":
+          focusedIndex &&
+          (index === fixIndex(focusedIndex + 4) ||
+            index === fixIndex(focusedIndex - 4)),
+      })}
       style={{ gridArea: `g${index}` }}
+      onMouseEnter={() => onFocused?.(index)}
     >
       <div className={classNames("iztro-palace-major")}>
         {palace.majorStars.map((star) => (

@@ -12,6 +12,15 @@
   transition: all 0.25s ease-in-out;
   grid-auto-flow: column;
 }
+.iztro-palace.focused-palace {
+  background-color: #e8ebf1;
+}
+.iztro-palace.opposite-palace {
+  background-color: #d9f7be;
+}
+.iztro-palace.surrounded-palace {
+  background-color: #eefbe2;
+}
 .iztro-palace-major {
   grid-area: major;
 }

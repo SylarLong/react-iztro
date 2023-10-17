@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Izpalace } from "../Izpalace/Izpalace";
 import { IztrolabeProps } from "./Iztrolabe.type";
 import { IzpalaceCenter } from "../IzpalaceCenter";
@@ -8,6 +8,7 @@ import "./Iztrolabe.css";
 import "../theme/default.css";
 
 export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
+  const [focusedIndex, setFocusedIndex] = useState<number>();
   const { astrolabe, horoscope } = useIztro({
     birthday: props.birthday,
     birthTime: props.birthTime,
@@ -27,6 +28,8 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
           <Izpalace
             key={palace.earthlyBranch}
             index={index}
+            focusedIndex={focusedIndex}
+            onFocused={setFocusedIndex}
             horoscope={horoscope}
             {...palace}
           />
