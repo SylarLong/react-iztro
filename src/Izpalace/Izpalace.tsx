@@ -57,9 +57,10 @@ export const Izpalace = ({
     <div
       className={classNames("iztro-palace", {
         "focused-palace": focusedIndex === index,
-        "opposite-palace": focusedIndex && index === fixIndex(focusedIndex + 6),
+        "opposite-palace":
+          focusedIndex != undefined && index === fixIndex(focusedIndex + 6),
         "surrounded-palace":
-          focusedIndex &&
+          focusedIndex != undefined &&
           (index === fixIndex(focusedIndex + 4) ||
             index === fixIndex(focusedIndex - 4)),
       })}

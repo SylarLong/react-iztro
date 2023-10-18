@@ -13,13 +13,13 @@
   grid-auto-flow: column;
 }
 .iztro-palace.focused-palace {
-  background-color: #e8ebf1;
+  background-color: #aab8d32f;
 }
 .iztro-palace.opposite-palace {
-  background-color: #d9f7be;
+  background-color: #93f73d4f;
 }
 .iztro-palace.surrounded-palace {
-  background-color: #eefbe2;
+  background-color: #aff46f24;
 }
 .iztro-palace-major {
   grid-area: major;
