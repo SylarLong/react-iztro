@@ -59,6 +59,26 @@
   gap: 3px;
 }
 
+.iztro-palace-fate .iztro-palace-decadal-active {
+  background-color: var(--iztro-color-decadal);
+}
+
+.iztro-palace-fate .iztro-palace-yearly-active {
+  background-color: var(--iztro-color-yearly);
+}
+
+.iztro-palace-fate .iztro-palace-monthly-active {
+  background-color: var(--iztro-color-monthly);
+}
+
+.iztro-palace-fate .iztro-palace-daily-active {
+  background-color: var(--iztro-color-daily);
+}
+
+.iztro-palace-fate .iztro-palace-hourly-active {
+  background-color: var(--iztro-color-hourly);
+}
+
 .iztro-palace-footer {
   grid-area: ft;
   display: grid;
@@ -85,4 +105,19 @@
   white-space: nowrap;
   gap: 3px;
   justify-content: center;
+}
+.iztro-palace-dynamic-name .iztro-palace-dynamic-name-decadal {
+  color: var(--iztro-color-decadal);
+}
+.iztro-palace-dynamic-name .iztro-palace-dynamic-name-yearly {
+  color: var(--iztro-color-yearly);
+}
+.iztro-palace-dynamic-name .iztro-palace-dynamic-name-monthly {
+  color: var(--iztro-color-monthly);
+}
+.iztro-palace-dynamic-name .iztro-palace-dynamic-name-daily {
+  color: var(--iztro-color-daily);
+}
+.iztro-palace-dynamic-name .iztro-palace-dynamic-name-hourly {
+  color: var(--iztro-color-hourly);
 }

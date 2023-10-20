@@ -13,6 +13,11 @@
   --iztro-color-decorator-2: #813359;
   --iztro-color-text: #8c8c8c;
   --iztro-color-border: #00152912;
+  --iztro-color-decadal: var(--iztro-color-active);
+  --iztro-color-yearly: var(--iztro-color-decorator-2);
+  --iztro-color-monthly: var(--iztro-color-nice);
+  --iztro-color-daily: var(--iztro-color-decorator-1);
+  --iztro-color-hourly: var(--iztro-color-text);
 }
 
 .iztro-palace {

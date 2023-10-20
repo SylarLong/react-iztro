@@ -20,3 +20,12 @@
   text-decoration: none;
   text-shadow: 1px 1px rgba(255, 255, 255, 0.3);
 }
+
+#palace-line {
+  stroke: var(--iztro-color-awesome);
+  stroke-opacity: 0.5;
+  transition: all 0.25s ease-in-out;
+}
+#palace-line.decadal {
+  stroke: var(--iztro-color-decadal);
+}

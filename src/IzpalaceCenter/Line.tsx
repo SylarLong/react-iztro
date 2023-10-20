@@ -1,15 +1,31 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useEffect, useMemo, useRef } from "react";
 import { fixIndex } from "iztro/lib/utils";
+import { Scope } from "iztro/lib/data/types";
 
 type LineProps = {
-  soulIndex: number;
+  index: number;
+  scope?: Scope;
 };
 
-export const Line = ({ soulIndex }: LineProps) => {
+export const Line = ({ index, scope }: LineProps) => {
   const line = useRef<HTMLCanvasElement>(null);
 
+  const strokeColor = useMemo(() => {
+    if (scope) {
+      const element = document.getElementsByClassName(
+        "iztro-astrolabe-theme-default"
+      )[0];
+      const computedStyle = getComputedStyle(element);
+
+      // 获取CSS中定义的变量的值
+      return computedStyle.getPropertyValue(`--iztro-color-${scope}`);
+    }
+
+    return "rgba(245,0,0)";
+  }, [scope]);
+
   useEffect(() => {
-    const idx = soulIndex;
+    const idx = index;
     const canvasDom = line.current;
 
     if (!canvasDom || idx < 0) {
@@ -49,8 +65,9 @@ export const Line = ({ soulIndex }: LineProps) => {
 
     canvasCtx.clearRect(0, 0, canvasDom.width, canvasDom.height);
 
-    canvasCtx.strokeStyle = "rgba(245,0,0,0.3)";
+    canvasCtx.strokeStyle = strokeColor;
     canvasCtx.lineWidth = 1;
+    canvasCtx.globalAlpha = 0.5;
 
     const dgIdx = fixIndex(idx + 6);
     const q4Idx = fixIndex(idx + 4);
@@ -64,11 +81,12 @@ export const Line = ({ soulIndex }: LineProps) => {
     canvasCtx.lineTo(points[idx][0], points[idx][1]);
 
     canvasCtx.stroke();
-  }, [soulIndex]);
+  }, [index, strokeColor]);
 
   return (
     <canvas
       id="palace-line"
+      className={scope}
       style={{
         position: "absolute",
         width: "100%",

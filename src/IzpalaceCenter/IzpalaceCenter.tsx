@@ -5,12 +5,19 @@ import { Item, ItemProps } from "./Item";
 import "./IzpalaceCenter.css";
 import { Line } from "./Line";
 import { fixEarthlyBranchIndex } from "iztro/lib/utils";
+import { Scope } from "iztro/lib/data/types";
 
 type IzpalaceCenterProps = {
   astrolabe?: FunctionalAstrolabe;
+  arrowIndex?: number;
+  arrowScope?: Scope;
 };
 
-export const IzpalaceCenter = ({ astrolabe }: IzpalaceCenterProps) => {
+export const IzpalaceCenter = ({
+  astrolabe,
+  arrowIndex,
+  arrowScope,
+}: IzpalaceCenterProps) => {
   const records: ItemProps[] = useMemo(
     () => [
       {
@@ -61,7 +68,11 @@ export const IzpalaceCenter = ({ astrolabe }: IzpalaceCenterProps) => {
     <div className={classNames("iztro-center-palace")}>
       {astrolabe?.earthlyBranchOfSoulPalace && (
         <Line
-          soulIndex={fixEarthlyBranchIndex(astrolabe.earthlyBranchOfSoulPalace)}
+          scope={arrowScope}
+          index={
+            arrowIndex ??
+            fixEarthlyBranchIndex(astrolabe.earthlyBranchOfSoulPalace)
+          }
         />
       )}
 

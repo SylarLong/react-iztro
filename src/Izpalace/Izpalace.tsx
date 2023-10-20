@@ -5,53 +5,82 @@ import "./Izpalace.css";
 import { Izstar } from "../Izstar";
 import { t } from "iztro/lib/i18n";
 import { fixIndex } from "iztro/lib/utils";
+import { Scope } from "iztro/lib/data/types";
 
 export const Izpalace = ({
   index,
   focusedIndex,
   onFocused,
   horoscope,
+  showDecadalScope,
+  showYearlyScope,
+  showMonthlyScope,
+  showDailyScope,
+  showHourlyScope,
+  toggleScope,
   ...palace
 }: IzpalaceProps) => {
   const horoscopeNames = useMemo(() => {
     const horoscopeNames = [];
 
     if (horoscope?.decadal.index === index) {
-      horoscopeNames.push(
-        `${horoscope.decadal.name}(${horoscope.decadal.heavenlyStem})`
-      );
+      horoscopeNames.push({
+        ...horoscope.decadal,
+        scope: "decadal",
+        show: showDecadalScope,
+      });
     }
 
     if (horoscope?.yearly.index === index) {
-      horoscopeNames.push(
-        `${horoscope.yearly.name}(${horoscope.yearly.heavenlyStem})`
-      );
+      horoscopeNames.push({
+        ...horoscope.yearly,
+        scope: "yearly",
+        show: showYearlyScope,
+      });
     }
 
     if (horoscope?.monthly.index === index) {
-      horoscopeNames.push(
-        `${horoscope.monthly.name}(${horoscope.monthly.heavenlyStem})`
-      );
+      horoscopeNames.push({
+        ...horoscope.monthly,
+        scope: "monthly",
+        show: showMonthlyScope,
+      });
     }
 
     if (horoscope?.daily.index === index) {
-      horoscopeNames.push(
-        `${horoscope.daily.name}(${horoscope.daily.heavenlyStem})`
-      );
+      horoscopeNames.push({
+        ...horoscope.daily,
+        scope: "daily",
+        show: showDailyScope,
+      });
     }
 
     if (horoscope?.hourly.index === index) {
-      horoscopeNames.push(
-        `${horoscope.hourly.name}(${horoscope.hourly.heavenlyStem})`
-      );
+      horoscopeNames.push({
+        ...horoscope.hourly,
+        scope: "hourly",
+        show: showHourlyScope,
+      });
     }
 
     if (horoscope?.age.index === index) {
-      horoscopeNames.push(horoscope.age.name);
+      horoscopeNames.push({
+        name: horoscope.age.name,
+        heavenlyStem: null,
+        scope: "age",
+        show: false,
+      });
     }
 
     return horoscopeNames;
-  }, [horoscope]);
+  }, [
+    horoscope,
+    showDecadalScope,
+    showYearlyScope,
+    showMonthlyScope,
+    showDailyScope,
+    showHourlyScope,
+  ]);
 
   return (
     <div
@@ -66,6 +95,7 @@ export const Izpalace = ({
       })}
       style={{ gridArea: `g${index}` }}
       onMouseEnter={() => onFocused?.(index)}
+      onMouseLeave={() => onFocused?.(undefined)}
     >
       <div className={classNames("iztro-palace-major")}>
         {palace.majorStars.map((star) => (
@@ -105,7 +135,18 @@ export const Izpalace = ({
       </div>
       <div className={classNames("iztro-palace-fate")}>
         {horoscopeNames?.map((item) => (
-          <span key={item}>{item}</span>
+          <span
+            key={item.name}
+            className={classNames({
+              [`iztro-palace-${item.scope}-active`]: item.show,
+            })}
+            onClick={
+              item.scope ? () => toggleScope?.(item.scope as Scope) : undefined
+            }
+          >
+            {item.name}
+            {item.heavenlyStem && `(${item.heavenlyStem})`}
+          </span>
         ))}
       </div>
       <div className={classNames("iztro-palace-footer")}>
@@ -132,13 +173,33 @@ export const Izpalace = ({
               {palace.decadal.range.join(" - ")}
             </div>
           </div>
-          {/* <div className={classNames("iztro-palace-dynamic-name")}>
-            <span>{horoscope?.decadal.palaceNames[index]}</span>
-            <span>{horoscope?.yearly.palaceNames[index]}</span>
-            <span>{horoscope?.monthly.palaceNames[index]}</span>
-            <span>{horoscope?.daily.palaceNames[index]}</span>
-            <span>{horoscope?.hourly.palaceNames[index]}</span>
-          </div> */}
+          <div className={classNames("iztro-palace-dynamic-name")}>
+            {showDecadalScope && (
+              <span className="iztro-palace-dynamic-name-decadal">
+                {horoscope?.decadal.palaceNames[index]}
+              </span>
+            )}
+            {showYearlyScope && (
+              <span className="iztro-palace-dynamic-name-yearly">
+                {horoscope?.yearly.palaceNames[index]}
+              </span>
+            )}
+            {showMonthlyScope && (
+              <span className="iztro-palace-dynamic-name-monthly">
+                {horoscope?.monthly.palaceNames[index]}
+              </span>
+            )}
+            {showDailyScope && (
+              <span className="iztro-palace-dynamic-name-daily">
+                {horoscope?.daily.palaceNames[index]}
+              </span>
+            )}
+            {showHourlyScope && (
+              <span className="iztro-palace-dynamic-name-hourly">
+                {horoscope?.hourly.palaceNames[index]}
+              </span>
+            )}
+          </div>
         </div>
         <div>
           <div className={classNames("iztro-palace-rgt24")}>
