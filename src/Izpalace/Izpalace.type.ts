@@ -1,10 +1,11 @@
+import FunctionalHoroscope from "iztro/lib/astro/FunctionalHoroscope";
 import { IFunctionalPalace } from "iztro/lib/astro/FunctionalPalace";
-import { Horoscope, Scope } from "iztro/lib/data/types";
+import { Scope } from "iztro/lib/data/types";
 
 export type IzpalaceProps = {
   index: number;
   focusedIndex?: number;
-  horoscope?: Horoscope;
+  horoscope?: FunctionalHoroscope;
   showDecadalScope?: boolean;
   showYearlyScope?: boolean;
   showMonthlyScope?: boolean;

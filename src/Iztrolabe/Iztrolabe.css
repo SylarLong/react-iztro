@@ -26,14 +26,33 @@
 .iztro-star-mutagen.mutagen-0 {
   background-color: var(--iztro-color-awesome);
 }
-
 .iztro-star-mutagen.mutagen-1 {
   background-color: var(--iztro-color-quan);
 }
-
 .iztro-star-mutagen.mutagen-2 {
   background-color: var(--iztro-color-nice);
 }
 .iztro-star-mutagen.mutagen-3 {
   background-color: var(--iztro-color-focus);
+}
+
+.iztro-star-mutagen.mutagen-decadal {
+  background-color: var(--iztro-color-decadal);
+  opacity: 0.6;
+}
+.iztro-star-mutagen.mutagen-yearly {
+  background-color: var(--iztro-color-yearly);
+  opacity: 0.6;
+}
+.iztro-star-mutagen.mutagen-monthly {
+  background-color: var(--iztro-color-monthly);
+  opacity: 0.6;
+}
+.iztro-star-mutagen.mutagen-daily {
+  background-color: var(--iztro-color-daily);
+  opacity: 0.6;
+}
+.iztro-star-mutagen.mutagen-hourly {
+  background-color: var(--iztro-color-hourly);
+  opacity: 0.6;
 }

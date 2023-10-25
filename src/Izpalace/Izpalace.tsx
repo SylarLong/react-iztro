@@ -5,28 +5,33 @@ import "./Izpalace.css";
 import { Izstar } from "../Izstar";
 import { t } from "iztro/lib/i18n";
 import { fixIndex } from "iztro/lib/utils";
-import { Scope } from "iztro/lib/data/types";
+import { HoroscopeItem, Scope } from "iztro/lib/data/types";
+
+export type HoroscopeForPalace = {
+  scope: Scope;
+  show: boolean;
+} & Partial<HoroscopeItem>;
 
 export const Izpalace = ({
   index,
   focusedIndex,
   onFocused,
   horoscope,
-  showDecadalScope,
-  showYearlyScope,
-  showMonthlyScope,
-  showDailyScope,
-  showHourlyScope,
+  showDecadalScope = false,
+  showYearlyScope = false,
+  showMonthlyScope = false,
+  showDailyScope = false,
+  showHourlyScope = false,
   toggleScope,
   ...palace
 }: IzpalaceProps) => {
-  const horoscopeNames = useMemo(() => {
+  const horoscopeNames = useMemo<HoroscopeForPalace[]>(() => {
     const horoscopeNames = [];
 
     if (horoscope?.decadal.index === index) {
       horoscopeNames.push({
         ...horoscope.decadal,
-        scope: "decadal",
+        scope: "decadal" as Scope,
         show: showDecadalScope,
       });
     }
@@ -34,7 +39,7 @@ export const Izpalace = ({
     if (horoscope?.yearly.index === index) {
       horoscopeNames.push({
         ...horoscope.yearly,
-        scope: "yearly",
+        scope: "yearly" as Scope,
         show: showYearlyScope,
       });
     }
@@ -42,7 +47,7 @@ export const Izpalace = ({
     if (horoscope?.monthly.index === index) {
       horoscopeNames.push({
         ...horoscope.monthly,
-        scope: "monthly",
+        scope: "monthly" as Scope,
         show: showMonthlyScope,
       });
     }
@@ -50,7 +55,7 @@ export const Izpalace = ({
     if (horoscope?.daily.index === index) {
       horoscopeNames.push({
         ...horoscope.daily,
-        scope: "daily",
+        scope: "daily" as Scope,
         show: showDailyScope,
       });
     }
@@ -58,7 +63,7 @@ export const Izpalace = ({
     if (horoscope?.hourly.index === index) {
       horoscopeNames.push({
         ...horoscope.hourly,
-        scope: "hourly",
+        scope: "hourly" as Scope,
         show: showHourlyScope,
       });
     }
@@ -66,13 +71,54 @@ export const Izpalace = ({
     if (horoscope?.age.index === index) {
       horoscopeNames.push({
         name: horoscope.age.name,
-        heavenlyStem: null,
-        scope: "age",
+        heavenlyStem: undefined,
+        scope: "age" as Scope,
         show: false,
       });
     }
 
     return horoscopeNames;
+  }, [
+    horoscope,
+    showDecadalScope,
+    showYearlyScope,
+    showMonthlyScope,
+    showDailyScope,
+    showHourlyScope,
+  ]);
+
+  const horoscopeMutagens = useMemo(() => {
+    if (!horoscope) {
+      return [];
+    }
+
+    return [
+      {
+        mutagen: horoscope.decadal.mutagen,
+        scope: "decadal" as Scope,
+        show: showDecadalScope,
+      },
+      {
+        mutagen: horoscope.yearly.mutagen,
+        scope: "yearly" as Scope,
+        show: showYearlyScope,
+      },
+      {
+        mutagen: horoscope.monthly.mutagen,
+        scope: "monthly" as Scope,
+        show: showMonthlyScope,
+      },
+      {
+        mutagen: horoscope.daily.mutagen,
+        scope: "daily" as Scope,
+        show: showDailyScope,
+      },
+      {
+        mutagen: horoscope.hourly.mutagen,
+        scope: "hourly" as Scope,
+        show: showHourlyScope,
+      },
+    ];
   }, [
     horoscope,
     showDecadalScope,
@@ -99,12 +145,20 @@ export const Izpalace = ({
     >
       <div className={classNames("iztro-palace-major")}>
         {palace.majorStars.map((star) => (
-          <Izstar key={star.name} {...star} />
+          <Izstar
+            key={star.name}
+            horoscopeMutagens={horoscopeMutagens}
+            {...star}
+          />
         ))}
       </div>
       <div className={classNames("iztro-palace-minor")}>
         {palace.minorStars.map((star) => (
-          <Izstar key={star.name} {...star} />
+          <Izstar
+            key={star.name}
+            horoscopeMutagens={horoscopeMutagens}
+            {...star}
+          />
         ))}
       </div>
       <div className={classNames("iztro-palace-adj")}>

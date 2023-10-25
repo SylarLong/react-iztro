@@ -2,23 +2,38 @@ import React from "react";
 import { IzstarProps } from "./Izstar.type";
 import classNames from "classnames";
 import { MUTAGEN } from "iztro/lib/data";
-import { MutagenKey, kot } from "iztro/lib/i18n";
+import { MutagenKey, kot, t } from "iztro/lib/i18n";
 
-export const Izstar = (props: IzstarProps) => {
+export const Izstar = ({ horoscopeMutagens, ...star }: IzstarProps) => {
   return (
-    <div className={classNames("iztro-star", `iztro-star-${props.type}`)}>
-      {props.name}
-      <i className={classNames("iztro-star-brightness")}>{props.brightness}</i>
-      {props.mutagen && (
+    <div className={classNames("iztro-star", `iztro-star-${star.type}`)}>
+      {star.name}
+      <i className={classNames("iztro-star-brightness")}>{star.brightness}</i>
+      {star.mutagen && (
         <span
           className={classNames(
             "iztro-star-mutagen",
-            `mutagen-${MUTAGEN.indexOf(kot<MutagenKey>(props.mutagen))}`
+            `mutagen-${MUTAGEN.indexOf(kot<MutagenKey>(star.mutagen))}`
           )}
         >
-          {props.mutagen}
+          {star.mutagen}
         </span>
       )}
+      {horoscopeMutagens?.map((item) => {
+        if (item.mutagen.includes(star.name) && item.show) {
+          return (
+            <span
+              key={item.scope}
+              className={classNames(
+                "iztro-star-mutagen",
+                `mutagen-${item.scope}`
+              )}
+            >
+              {t(MUTAGEN[item.mutagen.indexOf(star.name)])}
+            </span>
+          );
+        }
+      })}
     </div>
   );
 };
