@@ -257,8 +257,16 @@ export const Izpalace = ({
         </div>
         <div>
           <div className={classNames("iztro-palace-rgt24")}>
-            <div>{palace.suiqian12}</div>
-            <div>{palace.jiangqian12}</div>
+            <div>
+              {showYearlyScope
+                ? horoscope?.yearly.yearlyDecStar.suiqian12[index]
+                : palace.suiqian12}
+            </div>
+            <div>
+              {showYearlyScope
+                ? horoscope?.yearly.yearlyDecStar.jiangqian12[index]
+                : palace.jiangqian12}
+            </div>
           </div>
 
           <div className={classNames("iztro-palace-gz")}>

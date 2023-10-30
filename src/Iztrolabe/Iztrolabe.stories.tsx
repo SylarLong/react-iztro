@@ -68,7 +68,12 @@ type Story = StoryObj<typeof IztroAstrolabe>;
 
 export const Iztrolabe: Story = (args: IztrolabeProps) => (
   <div style={{ height: "100vh" }}>
-    <IztroAstrolabe {...args} />
+    <IztroAstrolabe
+      {...args}
+      horoscopeDate={
+        args.horoscopeDate ? new Date(args.horoscopeDate) : undefined
+      }
+    />
   </div>
 );
 

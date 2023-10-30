@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Izpalace } from "../Izpalace/Izpalace";
 import { IztrolabeProps } from "./Iztrolabe.type";
 import { IzpalaceCenter } from "../IzpalaceCenter";
@@ -15,7 +15,7 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
   const [showMonthly, setShowMonthly] = useState(false);
   const [showDaily, setShowDaily] = useState(false);
   const [showHourly, setShowShowHourly] = useState(false);
-  const { astrolabe, horoscope } = useIztro({
+  const { astrolabe, horoscope, setHoroscope } = useIztro({
     birthday: props.birthday,
     birthTime: props.birthTime,
     gender: props.gender,
@@ -81,6 +81,12 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
       };
     }
   }, [showDecadal, showYearly, showMonthly, showDaily, showHourly]);
+
+  useEffect(() => {
+    if (props.horoscopeDate) {
+      setHoroscope(props.horoscopeDate, props.horoscopeHour);
+    }
+  }, [props.horoscopeDate, props.horoscopeHour]);
 
   return (
     <div

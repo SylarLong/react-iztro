@@ -24,15 +24,23 @@ import {Iztrolabe} from "react-iztro"
 function App() {
   return (
     <div className="App" style={{ width: 1024, margin: '50px auto', boxShadow: '0 0 25px rgba(0,0,0,0.25)'}}>
-      <Iztrolabe birthday="2003-10-12" birthTime={1} birthdayType="solar" gender="male" />
+      <Iztrolabe 
+        birthday="2003-10-12" 
+        birthTime={1} 
+        birthdayType="solar" 
+        gender="male" 
+        horoscopeDate={new Date()} // 新增参数，设置运限日期【可选，默认为当前时间】
+        horoscopeHour={1}  // 新增参数，设置流时时辰的索引【可选，默认会获取 horoscopeDate 时间】
+      />
     </div>
   );
 }
 
 export default App;
+
 ```
 
-如此你就得到了上图所示的一张星盘。怎么样，集成起来是不是很方便？当然这只是第一个版本，后面会陆续更新，并且完善文档。有兴趣的同学可以持续关注。记得给⭐️⭐️哦
+如此你就得到了上图所示的一张星盘。有兴趣的同学可以持续关注。记得给⭐️⭐️哦
 
 ### 克隆到本地
 
