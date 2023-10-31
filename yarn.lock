@@ -5762,20 +5762,20 @@ istanbul-reports@^3.1.4:
     istanbul-lib-report "^3.0.0"
 
 iztro-hook@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.npmjs.org/iztro-hook/-/iztro-hook-1.2.0.tgz#57e203dd7830152f19d6ab3a813685dedb6917e2"
-  integrity sha512-Ngx+fmebw4VkP2ly10ajNYVb52eAosHPwinkx/34UagMSWiWn0rZ75mR1rCfMWqVdbOTglNM8urq1hupppAMwg==
+  version "1.2.1"
+  resolved "https://registry.npmjs.org/iztro-hook/-/iztro-hook-1.2.1.tgz#5911c2e2da3b934b024f54ca68eb63e97c0d611f"
+  integrity sha512-PXtiJfUK2tabVtcmqbSMF6yRWQ9RARXjqKzlETLO1slahgfE6OQNcCc+5Qolf2TIJLtsehmh3xQH7/pvC0YJdQ==
   dependencies:
-    iztro "2.0.1"
+    iztro "2.0.2"
 
-iztro@2.0.1, iztro@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.npmjs.org/iztro/-/iztro-2.0.1.tgz#3111eddd2e76a0c720a6426ccf0f8bd93cc752f8"
-  integrity sha512-BGW7HXEAyxFArBm29O6Y6Tlqs2GqtJKuapqOCTgmLq7FovEQcH4Ff1d7VRj78YGUU5Glqf/e8X//gHKvS/qj3Q==
+iztro@2.0.2, iztro@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.npmjs.org/iztro/-/iztro-2.0.2.tgz#2fd3a24476780aff0fbe530a846a2a473ac36f42"
+  integrity sha512-qECZaiVrzN6fJZ0Hp80E0bmPiXHnllZpfZA6LPOcowKyyHc2nDQfg+bvpb0P3Q6s5VUcFJ4JUYyVy5Qb1sb4UQ==
   dependencies:
     dayjs "^1.11.10"
     i18next "^23.5.1"
-    lunar-lite "^0.0.2"
+    lunar-lite "^0.0.3"
 
 jackspeak@2.1.1, jackspeak@^2.0.3:
   version "2.1.1"
@@ -6096,10 +6096,10 @@ lru-cache@^6.0.0:
   resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-10.0.1.tgz#0a3be479df549cca0e5d693ac402ff19537a6b7a"
   integrity sha512-IJ4uwUTi2qCccrioU6g9g/5rvvVl13bsdczUUcqbciD9iLr095yj8DQKdObriEvuNSx325N1rV1O0sJFszx75g==
 
-lunar-lite@^0.0.2:
-  version "0.0.2"
-  resolved "https://registry.npmjs.org/lunar-lite/-/lunar-lite-0.0.2.tgz#a2d9d5a573b15cbafd083d7345aa2946bfad1185"
-  integrity sha512-Q53kqeZ8ZJils3yvwj8UhT5eS1MY4MpW+KBEZFsgTU8yO6ROF27ske3AGg9IYyyGDCBA0smy60jFKjYwxPlhKw==
+lunar-lite@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/lunar-lite/-/lunar-lite-0.0.3.tgz#c0a053fb6d585a91c6496352208e28d6ff2c2dde"
+  integrity sha512-J6K/MU8CLTqBPfijc5u+wnYlxvZAS3k5knjfUakZoz2XTkOB0HerUgXNHyZS2be389J4GSYaUKvDk8mps0sNdQ==
 
 lz-string@^1.5.0:
   version "1.5.0"

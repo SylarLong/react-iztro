@@ -3,5 +3,7 @@ import { NestedProps } from "../config/types";
 
 export type IztrolabeProps = {
   width?: number | string;
+  horoscopeDate?: string | Date;
+  horoscopeHour?: number;
 } & IztroInput &
   NestedProps;
