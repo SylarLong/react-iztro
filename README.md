@@ -2,7 +2,9 @@
 
 # 📦 react-iztro
 
-基于iztro的react组件，用于生成一张紫微斗数星盘。react component of iztro used to generate an astrolabe of Zi Wei Dou Shu.
+基于iztro的react组件，用于生成一张紫微斗数星盘。
+
+react component of iztro used to generate an astrolabe of Zi Wei Dou Shu.
 
 </div>
 
