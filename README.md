@@ -1,8 +1,24 @@
-# react-iztro
-react component of iztro
+<div align="center">
+
+# 📦 react-iztro
+
+基于iztro的react组件库，用于生成一张紫微斗数星盘。react component of iztro used to generate an astrolabe of Zi Wei Dou Shu.
+
+</div>
+
+<div align="center">
+
+[![npm](https://img.shields.io/npm/v/react-iztro?logo=npm&logoColor=%23CB3837)](https://www.npmjs.com/package/react-iztro) 
+[![npm](https://img.shields.io/npm/dt/react-iztro?logo=npm&logoColor=%23CB3837)](https://www.npmjs.com/package/react-iztro) 
+[![GitHub](https://img.shields.io/github/license/sylarlong/react-iztro)](https://www.npmjs.com/package/react-iztro) 
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/SylarLong/react-iztro)](https://www.npmjs.com/package/react-iztro) 
+[![Package Quality](https://packagequality.com/shield/react-iztro.svg)](https://packagequality.com/#?package=react-iztro) 
+
+</div>
+
+---
 
 <img width="966" alt="image" src="https://github.com/SylarLong/react-iztro/assets/6510425/f4335997-fdd8-42e2-bb1a-600942f9b0ba">
-
 
 ### 安装
 
