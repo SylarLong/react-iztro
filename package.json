@@ -68,7 +68,8 @@
   "dependencies": {
     "classnames": "^2.3.2",
     "iztro": "^2.0.2",
-    "iztro-hook": "^1.2.1"
+    "iztro-hook": "^1.2.1",
+    "lunar-lite": "^0.0.3"
   },
   "resolutions": {
     "jackspeak": "2.1.1"

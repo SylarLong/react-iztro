@@ -4,13 +4,54 @@
   width: 100%;
   height: 100%;
 }
-.iztro-center-palace ul {
+.iztro-center-palace ul.basic-info {
   margin: 10px;
   padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
 }
-.iztro-center-palace li {
+.iztro-center-palace ul.basic-info li {
   list-style: none;
 }
+.iztro-center-palace .center-title {
+  padding: 5px 0;
+  margin: 0;
+  font-size: var(--iztro-star-font-size-big);
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px dashed var(--iztro-color-border);
+}
+
+.horo-buttons {
+  margin: 10px;
+  font-size: var(--iztro-star-font-size-small);
+  display: flex;
+  justify-content: space-around;
+}
+.horo-buttons .center-button {
+  display: block;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid var(--iztro-color-border);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  color: var(--iztro-color-text);
+  user-select: none;
+}
+.horo-buttons .center-button:not(.disabled):hover {
+  color: var(--iztro-color-major);
+  background-color: var(--iztro-color-border);
+}
+.horo-buttons .center-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.horo-buttons .center-horo-hour {
+  display: flex;
+  align-items: center;
+}
+
 .iztro-copyright {
   position: absolute;
   bottom: 3px;
@@ -23,7 +64,7 @@
 
 #palace-line {
   stroke: var(--iztro-color-awesome);
-  stroke-opacity: 0.5;
+  opacity: 0.6;
   transition: all 0.25s ease-in-out;
 }
 #palace-line.decadal {

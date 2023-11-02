@@ -5761,7 +5761,7 @@ istanbul-reports@^3.1.4:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-iztro-hook@^1.2.0:
+iztro-hook@^1.2.1:
   version "1.2.1"
   resolved "https://registry.npmjs.org/iztro-hook/-/iztro-hook-1.2.1.tgz#5911c2e2da3b934b024f54ca68eb63e97c0d611f"
   integrity sha512-PXtiJfUK2tabVtcmqbSMF6yRWQ9RARXjqKzlETLO1slahgfE6OQNcCc+5Qolf2TIJLtsehmh3xQH7/pvC0YJdQ==

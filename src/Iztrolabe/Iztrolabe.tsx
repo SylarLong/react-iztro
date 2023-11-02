@@ -15,6 +15,8 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
   const [showMonthly, setShowMonthly] = useState(false);
   const [showDaily, setShowDaily] = useState(false);
   const [showHourly, setShowShowHourly] = useState(false);
+  const [horoscopeDate, setHoroscopeDate] = useState<string | Date>();
+  const [horoscopeHour, setHoroscopeHour] = useState<number>();
   const { astrolabe, horoscope, setHoroscope } = useIztro({
     birthday: props.birthday,
     birthTime: props.birthTime,
@@ -80,13 +82,16 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
         arrowScope: "decadal" as Scope,
       };
     }
-  }, [showDecadal, showYearly, showMonthly, showDaily, showHourly]);
+  }, [showDecadal, showYearly, showMonthly, showDaily, showHourly, horoscope]);
 
   useEffect(() => {
-    if (props.horoscopeDate) {
-      setHoroscope(props.horoscopeDate, props.horoscopeHour);
-    }
+    setHoroscopeDate(props.horoscopeDate ?? new Date());
+    setHoroscopeHour(props.horoscopeHour ?? 0);
   }, [props.horoscopeDate, props.horoscopeHour]);
+
+  useEffect(() => {
+    setHoroscope(horoscopeDate ?? new Date(), horoscopeHour);
+  }, [horoscopeDate, horoscopeHour]);
 
   return (
     <div
@@ -110,7 +115,15 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
           />
         );
       })}
-      <IzpalaceCenter astrolabe={astrolabe} {...dynamic} />
+      <IzpalaceCenter
+        astrolabe={astrolabe}
+        horoscope={horoscope}
+        horoscopeDate={horoscopeDate}
+        horoscopeHour={horoscopeHour}
+        setHoroscopeDate={setHoroscopeDate}
+        setHoroscopeHour={setHoroscopeHour}
+        {...dynamic}
+      />
     </div>
   );
 };
