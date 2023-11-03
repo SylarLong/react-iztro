@@ -103,6 +103,83 @@
   color: var(--iztro-color-nice);
 }
 
+.iztro-star-mutagen.mutagen-0 {
+  background-color: var(--iztro-color-awesome);
+}
+.iztro-star-mutagen.mutagen-1 {
+  background-color: var(--iztro-color-quan);
+}
+.iztro-star-mutagen.mutagen-2 {
+  background-color: var(--iztro-color-nice);
+}
+.iztro-star-mutagen.mutagen-3 {
+  background-color: var(--iztro-color-focus);
+}
+
+.iztro-star-mutagen.mutagen-decadal {
+  background-color: var(--iztro-color-decadal);
+  opacity: 0.6;
+}
+.iztro-star-mutagen.mutagen-yearly {
+  background-color: var(--iztro-color-yearly);
+  opacity: 0.6;
+}
+.iztro-star-mutagen.mutagen-monthly {
+  background-color: var(--iztro-color-monthly);
+  opacity: 0.6;
+}
+.iztro-star-mutagen.mutagen-daily {
+  background-color: var(--iztro-color-daily);
+  opacity: 0.6;
+}
+.iztro-star-mutagen.mutagen-hourly {
+  background-color: var(--iztro-color-hourly);
+  opacity: 0.6;
+}
+
+.iztro-palace-gz .iztro-palace-gz-active {
+  background-color: var(--iztro-color-nice);
+  color: #fff;
+  font-weight: normal;
+}
+
+.iztro-star-mutagen-0 {
+  background-color: var(--iztro-color-awesome);
+  color: #fff;
+  font-weight: normal;
+}
+
+.iztro-star-mutagen-1 {
+  background-color: var(--iztro-color-quan);
+  color: #fff;
+  font-weight: normal;
+}
+
+.iztro-star-mutagen-2 {
+  background-color: var(--iztro-color-nice);
+  color: #fff;
+  font-weight: normal;
+}
+
+.iztro-star-mutagen-3 {
+  background-color: var(--iztro-color-focus);
+  color: #fff;
+  font-weight: normal;
+}
+
+.iztro-star-self-mutagen-0::before {
+  background-color: var(--iztro-color-awesome);
+}
+.iztro-star-self-mutagen-1::before {
+  background-color: var(--iztro-color-quan);
+}
+.iztro-star-self-mutagen-2::before {
+  background-color: var(--iztro-color-nice);
+}
+.iztro-star-self-mutagen-3::before {
+  background-color: var(--iztro-color-focus);
+}
+
 .iztro-palace-name-body {
   font-size: var(--iztro-star-font-size-small);
   font-weight: normal;
@@ -128,4 +205,15 @@
 
 .iztro-palace-center-item span {
   color: var(--iztro-color-decorator-1);
+}
+
+.gender {
+  display: inline-block;
+  margin-right: 5px;
+}
+.gender.gender-male {
+  color: var(--iztro-color-quan);
+}
+.gender.gender-female {
+  color: var(--iztro-color-happy);
 }

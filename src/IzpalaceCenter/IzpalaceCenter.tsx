@@ -8,7 +8,7 @@ import { fixEarthlyBranchIndex } from "iztro/lib/utils";
 import { Scope } from "iztro/lib/data/types";
 import FunctionalHoroscope from "iztro/lib/astro/FunctionalHoroscope";
 import { normalizeDateStr, solar2lunar } from "lunar-lite";
-import { t } from "iztro/lib/i18n";
+import { GenderName, kot, t } from "iztro/lib/i18n";
 import { CHINESE_TIME } from "iztro/lib/data";
 
 const MIN_DATETIME = new Date(1990, 0, 31).getTime();
@@ -210,7 +210,16 @@ export const IzpalaceCenter = ({
           }
         />
       )}
-      <h3 className="center-title">基本信息</h3>
+      <h3 className="center-title">
+        <span
+          className={`gender gender-${kot<GenderName>(
+            astrolabe?.gender ?? ""
+          )}`}
+        >
+          {kot<GenderName>(astrolabe?.gender ?? "") === "male" ? "♂" : "♀"}
+        </span>
+        <span>基本信息</span>
+      </h3>
       <ul className="basic-info">
         {records.map((rec, idx) => (
           <Item key={idx} {...rec} />
@@ -271,7 +280,7 @@ export const IzpalaceCenter = ({
           })}
           onClick={() => onHoroscopeButtonClicked("hourly", 1)}
         >
-          时►
+          时▶
         </span>
         <span
           className={classNames("center-button", {
@@ -279,7 +288,7 @@ export const IzpalaceCenter = ({
           })}
           onClick={() => onHoroscopeButtonClicked("daily", 1)}
         >
-          日►
+          日▶
         </span>
         <span
           className={classNames("center-button", {
@@ -287,7 +296,7 @@ export const IzpalaceCenter = ({
           })}
           onClick={() => onHoroscopeButtonClicked("monthly", 1)}
         >
-          月►
+          月▶
         </span>
         <span
           className={classNames("center-button", {
@@ -295,7 +304,7 @@ export const IzpalaceCenter = ({
           })}
           onClick={() => onHoroscopeButtonClicked("yearly", 1)}
         >
-          年►
+          年▶
         </span>
         <span
           className={classNames("center-button", {
@@ -303,7 +312,7 @@ export const IzpalaceCenter = ({
           })}
           onClick={() => onHoroscopeButtonClicked("yearly", 10)}
         >
-          限►
+          限▶
         </span>
       </div>
       <a

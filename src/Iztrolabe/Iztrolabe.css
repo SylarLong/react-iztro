@@ -1,4 +1,5 @@
 .iztro-astrolabe {
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   display: grid;
   position: relative;
   width: 100%;
@@ -17,42 +18,21 @@
   font-size: var(--iztro-star-font-size-small);
   border-radius: 4px;
   color: #fff;
-  cursor: pointer;
   display: inline-block;
   margin-left: 1px;
   padding: 0 2px;
 }
 
-.iztro-star-mutagen.mutagen-0 {
-  background-color: var(--iztro-color-awesome);
-}
-.iztro-star-mutagen.mutagen-1 {
-  background-color: var(--iztro-color-quan);
-}
-.iztro-star-mutagen.mutagen-2 {
-  background-color: var(--iztro-color-nice);
-}
-.iztro-star-mutagen.mutagen-3 {
-  background-color: var(--iztro-color-focus);
+.iztro-star-self-mutagen {
+  position: relative;
 }
 
-.iztro-star-mutagen.mutagen-decadal {
-  background-color: var(--iztro-color-decadal);
-  opacity: 0.6;
-}
-.iztro-star-mutagen.mutagen-yearly {
-  background-color: var(--iztro-color-yearly);
-  opacity: 0.6;
-}
-.iztro-star-mutagen.mutagen-monthly {
-  background-color: var(--iztro-color-monthly);
-  opacity: 0.6;
-}
-.iztro-star-mutagen.mutagen-daily {
-  background-color: var(--iztro-color-daily);
-  opacity: 0.6;
-}
-.iztro-star-mutagen.mutagen-hourly {
-  background-color: var(--iztro-color-hourly);
-  opacity: 0.6;
+.iztro-star-self-mutagen::before {
+  border-radius: 4px 0 0 4px;
+  bottom: 0;
+  content: " ";
+  left: -4px;
+  position: absolute;
+  top: 0;
+  width: 4px;
 }

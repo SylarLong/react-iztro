@@ -1,5 +1,5 @@
 import FunctionalStar from "iztro/lib/star/FunctionalStar";
-import { StarName } from "iztro/lib/i18n";
+import { HeavenlyStemKey, StarName } from "iztro/lib/i18n";
 import { Scope } from "iztro/lib/data/types";
 
 export type HoroscopeMutagen = {
@@ -9,5 +9,7 @@ export type HoroscopeMutagen = {
 };
 
 export type IzstarProps = {
+  palaceHeavenlyStem?: HeavenlyStemKey;
+  activeHeavenlyStem?: HeavenlyStemKey;
   horoscopeMutagens?: HoroscopeMutagen[];
 } & FunctionalStar;

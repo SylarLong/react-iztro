@@ -1,22 +1,19 @@
 import React, { useMemo } from "react";
-import { IzpalaceProps } from "./Izpalace.type";
+import { HoroscopeForPalace, IzpalaceProps } from "./Izpalace.type";
 import classNames from "classnames";
 import "./Izpalace.css";
 import { Izstar } from "../Izstar";
-import { t } from "iztro/lib/i18n";
+import { HeavenlyStemKey, kot, t } from "iztro/lib/i18n";
 import { fixIndex } from "iztro/lib/utils";
-import { HoroscopeItem, Scope } from "iztro/lib/data/types";
-
-export type HoroscopeForPalace = {
-  scope: Scope;
-  show: boolean;
-} & Partial<HoroscopeItem>;
+import { Scope } from "iztro/lib/data/types";
 
 export const Izpalace = ({
   index,
   focusedIndex,
   onFocused,
   horoscope,
+  activeHeavenlyStem,
+  toggleActiveHeavenlyStem,
   showDecadalScope = false,
   showYearlyScope = false,
   showMonthlyScope = false,
@@ -147,6 +144,11 @@ export const Izpalace = ({
         {palace.majorStars.map((star) => (
           <Izstar
             key={star.name}
+            activeHeavenlyStem={activeHeavenlyStem}
+            palaceHeavenlyStem={kot<HeavenlyStemKey>(
+              palace.heavenlyStem,
+              "Heavenly"
+            )}
             horoscopeMutagens={horoscopeMutagens}
             {...star}
           />
@@ -156,6 +158,11 @@ export const Izpalace = ({
         {palace.minorStars.map((star) => (
           <Izstar
             key={star.name}
+            activeHeavenlyStem={activeHeavenlyStem}
+            palaceHeavenlyStem={kot<HeavenlyStemKey>(
+              palace.heavenlyStem,
+              "Heavenly"
+            )}
             horoscopeMutagens={horoscopeMutagens}
             {...star}
           />
@@ -269,9 +276,28 @@ export const Izpalace = ({
             </div>
           </div>
 
-          <div className={classNames("iztro-palace-gz")}>
-            {palace.heavenlyStem}
-            {palace.earthlyBranch}
+          <div
+            className={classNames("iztro-palace-gz", {
+              "iztro-palace-gz-active":
+                activeHeavenlyStem ===
+                kot<HeavenlyStemKey>(palace.heavenlyStem, "Heavenly"),
+            })}
+            onClick={() =>
+              toggleActiveHeavenlyStem?.(
+                kot<HeavenlyStemKey>(palace.heavenlyStem, "Heavenly")
+              )
+            }
+          >
+            <span
+              className={classNames({
+                "iztro-palace-gz-active":
+                  activeHeavenlyStem ===
+                  kot<HeavenlyStemKey>(palace.heavenlyStem, "Heavenly"),
+              })}
+            >
+              {palace.heavenlyStem}
+              {palace.earthlyBranch}
+            </span>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import FunctionalHoroscope from "iztro/lib/astro/FunctionalHoroscope";
 import { IFunctionalPalace } from "iztro/lib/astro/FunctionalPalace";
-import { Scope } from "iztro/lib/data/types";
+import { HoroscopeItem, Scope } from "iztro/lib/data/types";
+import { HeavenlyStemKey } from "iztro/lib/i18n";
 
 export type IzpalaceProps = {
   index: number;
@@ -11,6 +12,13 @@ export type IzpalaceProps = {
   showMonthlyScope?: boolean;
   showDailyScope?: boolean;
   showHourlyScope?: boolean;
+  activeHeavenlyStem?: HeavenlyStemKey;
+  toggleActiveHeavenlyStem?: (heavenlyStem: HeavenlyStemKey) => void;
   toggleScope?: (scope: Scope) => void;
   onFocused?: (index?: number) => void;
 } & IFunctionalPalace;
+
+export type HoroscopeForPalace = {
+  scope: Scope;
+  show: boolean;
+} & Partial<HoroscopeItem>;

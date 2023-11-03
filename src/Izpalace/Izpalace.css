@@ -99,6 +99,11 @@
 }
 .iztro-palace-gz {
   text-align: right;
+  cursor: pointer;
+}
+.iztro-palace-gz span {
+  display: inline-block;
+  padding: 0 1px;
 }
 .iztro-palace-dynamic-name {
   text-align: center;

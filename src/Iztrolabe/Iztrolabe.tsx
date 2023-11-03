@@ -7,8 +7,11 @@ import { useIztro } from "iztro-hook";
 import "./Iztrolabe.css";
 import "../theme/default.css";
 import { Scope } from "iztro/lib/data/types";
+import { HeavenlyStemKey } from "iztro/lib/i18n";
 
 export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
+  const [activeHeavenlyStem, setActiveHeavenlyStem] =
+    useState<HeavenlyStemKey>();
   const [focusedIndex, setFocusedIndex] = useState<number>();
   const [showDecadal, setShowDecadal] = useState(false);
   const [showYearly, setShowYearly] = useState(false);
@@ -44,6 +47,14 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
       case "hourly":
         setShowShowHourly(!showHourly);
         break;
+    }
+  };
+
+  const toggleActiveHeavenlyStem = (heavenlyStem: HeavenlyStemKey) => {
+    if (heavenlyStem === activeHeavenlyStem) {
+      setActiveHeavenlyStem(undefined);
+    } else {
+      setActiveHeavenlyStem(heavenlyStem);
     }
   };
 
@@ -111,6 +122,8 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
             showDailyScope={showDaily}
             showHourlyScope={showHourly}
             toggleScope={toggleShowScope}
+            activeHeavenlyStem={activeHeavenlyStem}
+            toggleActiveHeavenlyStem={toggleActiveHeavenlyStem}
             {...palace}
           />
         );
