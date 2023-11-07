@@ -23,16 +23,26 @@
   padding: 0 2px;
 }
 
-.iztro-star-self-mutagen {
+.star-with-mutagen {
   position: relative;
 }
 
-.iztro-star-self-mutagen::before {
-  border-radius: 4px 0 0 4px;
+.star-with-mutagen::before {
   bottom: 0;
   content: " ";
   left: -4px;
   position: absolute;
   top: 0;
   width: 4px;
+  transition: all 0.25s ease-in-out;
+}
+
+.star-with-mutagen::after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  right: 0;
+  height: 4px;
+  transition: all 0.25s ease-in-out;
 }

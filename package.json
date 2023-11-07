@@ -1,6 +1,6 @@
 {
   "name": "react-iztro",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "基于iztro实现的react紫微斗数星盘组件。A react component used to generate an astrolabe of ziweidoushu based on iztro.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -67,8 +67,8 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
-    "iztro": "^2.0.3",
-    "iztro-hook": "^1.2.2",
+    "iztro": "^2.0.5",
+    "iztro-hook": "^1.2.3",
     "lunar-lite": "^0.0.3"
   },
   "resolutions": {

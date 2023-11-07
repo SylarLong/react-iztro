@@ -5761,17 +5761,17 @@ istanbul-reports@^3.1.4:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-iztro-hook@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.npmjs.org/iztro-hook/-/iztro-hook-1.2.2.tgz#671fc2c8f204f8394f118ec7b32b10cf27fb1fc4"
-  integrity sha512-BQoYxgjQHSDJaM49tkPnRJSRQvXqVsnEp0mWpFqjJLgpb92ii4QXLzaeRZYuRY0Izff9qwM9UwSzA2kLnifMaA==
+iztro-hook@^1.2.3:
+  version "1.2.3"
+  resolved "https://registry.npmjs.org/iztro-hook/-/iztro-hook-1.2.3.tgz#94d1b5d5647dfa87c6967e9cbd8ef9f348a09e1b"
+  integrity sha512-IqwxH5C84l16K5Dh9GQb95pFuO9asTrHOyL/dYZUH89SiUd6Iw3pCcwWFzG54MJTFEaLhdAKmjlafu0vSeo9EA==
   dependencies:
-    iztro "2.0.3"
+    iztro "2.0.5"
 
-iztro@2.0.3, iztro@^2.0.3:
-  version "2.0.3"
-  resolved "https://registry.npmjs.org/iztro/-/iztro-2.0.3.tgz#74e2264c5b39360603d3692d6ed02a05ca64dbfa"
-  integrity sha512-Jqg+wqitzqSiiKmzcfeywxGd0Oq/JAIM0cLzxzdzkkCoJt05M9JminFNfnzsYhXdJ5uqDRDkIhgprobQL9N4Rw==
+iztro@2.0.5, iztro@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.npmjs.org/iztro/-/iztro-2.0.5.tgz#3a5895d0152c882c3d93013b4b2df03fac74053d"
+  integrity sha512-0scYrMZs0zZZmRXYTeqwHLZIqjuyZHC9OfVgGLf7AoGGatxOGPESJi/UQyNGGVvIR2BOBJ/TZjzOM0233C0FbA==
   dependencies:
     dayjs "^1.11.10"
     i18next "^23.5.1"

@@ -180,6 +180,19 @@
   background-color: var(--iztro-color-focus);
 }
 
+.iztro-star-hover-mutagen-0::after {
+  background-color: var(--iztro-color-awesome);
+}
+.iztro-star-hover-mutagen-1::after {
+  background-color: var(--iztro-color-quan);
+}
+.iztro-star-hover-mutagen-2::after {
+  background-color: var(--iztro-color-nice);
+}
+.iztro-star-hover-mutagen-3::after {
+  background-color: var(--iztro-color-focus);
+}
+
 .iztro-palace-name-body {
   font-size: var(--iztro-star-font-size-small);
   font-weight: normal;

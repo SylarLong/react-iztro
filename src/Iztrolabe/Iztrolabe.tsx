@@ -12,6 +12,7 @@ import { HeavenlyStemKey } from "iztro/lib/i18n";
 export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
   const [activeHeavenlyStem, setActiveHeavenlyStem] =
     useState<HeavenlyStemKey>();
+  const [hoverHeavenlyStem, setHoverHeavenlyStem] = useState<HeavenlyStemKey>();
   const [focusedIndex, setFocusedIndex] = useState<number>();
   const [showDecadal, setShowDecadal] = useState(false);
   const [showYearly, setShowYearly] = useState(false);
@@ -124,6 +125,8 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
             toggleScope={toggleShowScope}
             activeHeavenlyStem={activeHeavenlyStem}
             toggleActiveHeavenlyStem={toggleActiveHeavenlyStem}
+            hoverHeavenlyStem={hoverHeavenlyStem}
+            setHoverHeavenlyStem={setHoverHeavenlyStem}
             {...palace}
           />
         );

@@ -13,6 +13,8 @@ export type IzpalaceProps = {
   showDailyScope?: boolean;
   showHourlyScope?: boolean;
   activeHeavenlyStem?: HeavenlyStemKey;
+  hoverHeavenlyStem?: HeavenlyStemKey;
+  setHoverHeavenlyStem?: (heavenlyStem?: HeavenlyStemKey) => void;
   toggleActiveHeavenlyStem?: (heavenlyStem: HeavenlyStemKey) => void;
   toggleScope?: (scope: Scope) => void;
   onFocused?: (index?: number) => void;

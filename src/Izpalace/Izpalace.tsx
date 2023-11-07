@@ -14,6 +14,8 @@ export const Izpalace = ({
   horoscope,
   activeHeavenlyStem,
   toggleActiveHeavenlyStem,
+  hoverHeavenlyStem,
+  setHoverHeavenlyStem,
   showDecadalScope = false,
   showYearlyScope = false,
   showMonthlyScope = false,
@@ -145,6 +147,7 @@ export const Izpalace = ({
           <Izstar
             key={star.name}
             activeHeavenlyStem={activeHeavenlyStem}
+            hoverHeavenlyStem={hoverHeavenlyStem}
             palaceHeavenlyStem={kot<HeavenlyStemKey>(
               palace.heavenlyStem,
               "Heavenly"
@@ -159,6 +162,7 @@ export const Izpalace = ({
           <Izstar
             key={star.name}
             activeHeavenlyStem={activeHeavenlyStem}
+            hoverHeavenlyStem={hoverHeavenlyStem}
             palaceHeavenlyStem={kot<HeavenlyStemKey>(
               palace.heavenlyStem,
               "Heavenly"
@@ -287,6 +291,12 @@ export const Izpalace = ({
                 kot<HeavenlyStemKey>(palace.heavenlyStem, "Heavenly")
               )
             }
+            onMouseEnter={() =>
+              setHoverHeavenlyStem?.(
+                kot<HeavenlyStemKey>(palace.heavenlyStem, "Heavenly")
+              )
+            }
+            onMouseLeave={() => setHoverHeavenlyStem?.(undefined)}
           >
             <span
               className={classNames({

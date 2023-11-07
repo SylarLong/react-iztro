@@ -11,5 +11,6 @@ export type HoroscopeMutagen = {
 export type IzstarProps = {
   palaceHeavenlyStem?: HeavenlyStemKey;
   activeHeavenlyStem?: HeavenlyStemKey;
+  hoverHeavenlyStem?: HeavenlyStemKey;
   horoscopeMutagens?: HoroscopeMutagen[];
 } & FunctionalStar;
