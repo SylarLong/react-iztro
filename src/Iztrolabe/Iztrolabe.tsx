@@ -109,11 +109,10 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
     <div
       className={classNames("iztro-astrolabe", "iztro-astrolabe-theme-default")}
     >
-      {astrolabe?.palaces.map((palace, index) => {
+      {astrolabe?.palaces.map((palace) => {
         return (
           <Izpalace
             key={palace.earthlyBranch}
-            index={index}
             focusedIndex={focusedIndex}
             onFocused={setFocusedIndex}
             horoscope={horoscope}

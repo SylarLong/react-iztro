@@ -67,8 +67,8 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
-    "iztro": "^2.0.8",
-    "iztro-hook": "^1.2.6",
+    "iztro": "^2.2.0",
+    "iztro-hook": "^1.2.8",
     "lunar-lite": "^0.0.3"
   },
   "resolutions": {

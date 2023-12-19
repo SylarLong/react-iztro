@@ -6,7 +6,7 @@ import "./IzpalaceCenter.css";
 import { Line } from "./Line";
 import { fixEarthlyBranchIndex } from "iztro/lib/utils";
 import { Scope } from "iztro/lib/data/types";
-import FunctionalHoroscope from "iztro/lib/astro/FunctionalHoroscope";
+import { IFunctionalHoroscope } from "iztro/lib/astro/FunctionalHoroscope";
 import { normalizeDateStr, solar2lunar } from "lunar-lite";
 import { GenderName, kot, t } from "iztro/lib/i18n";
 import { CHINESE_TIME } from "iztro/lib/data";
@@ -16,7 +16,7 @@ const MAX_DATETIME = new Date(2101, 0, 1).getTime();
 
 type IzpalaceCenterProps = {
   astrolabe?: FunctionalAstrolabe;
-  horoscope?: FunctionalHoroscope;
+  horoscope?: IFunctionalHoroscope;
   horoscopeDate?: string | Date;
   horoscopeHour?: number;
   arrowIndex?: number;

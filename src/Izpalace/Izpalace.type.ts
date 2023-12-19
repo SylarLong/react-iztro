@@ -1,4 +1,4 @@
-import FunctionalHoroscope from "iztro/lib/astro/FunctionalHoroscope";
+import { IFunctionalHoroscope } from "iztro/lib/astro/FunctionalHoroscope";
 import { IFunctionalPalace } from "iztro/lib/astro/FunctionalPalace";
 import { HoroscopeItem, Scope } from "iztro/lib/data/types";
 import { HeavenlyStemKey } from "iztro/lib/i18n";
@@ -6,7 +6,7 @@ import { HeavenlyStemKey } from "iztro/lib/i18n";
 export type IzpalaceProps = {
   index: number;
   focusedIndex?: number;
-  horoscope?: FunctionalHoroscope;
+  horoscope?: IFunctionalHoroscope;
   showDecadalScope?: boolean;
   showYearlyScope?: boolean;
   showMonthlyScope?: boolean;
