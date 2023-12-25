@@ -37,6 +37,7 @@
 .iztro-palace-rgt24 {
   font-size: var(--iztro-star-font-size-small);
   font-weight: normal;
+  text-wrap: nowrap;
 }
 
 .iztro-palace-scope-age,
@@ -49,6 +50,7 @@
 }
 .iztro-palace-rgt24 {
   color: var(--iztro-color-decorator-2);
+  text-wrap: nowrap;
 }
 
 .iztro-star-major,

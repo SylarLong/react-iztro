@@ -96,6 +96,7 @@
 }
 .iztro-palace-name {
   cursor: pointer;
+  text-wrap: nowrap;
 }
 .iztro-palace-gz {
   text-align: right;
@@ -104,6 +105,7 @@
 .iztro-palace-gz span {
   display: inline-block;
   padding: 0 1px;
+  text-wrap: nowrap;
 }
 .iztro-palace-dynamic-name {
   text-align: center;
