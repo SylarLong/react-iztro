@@ -5761,21 +5761,21 @@ istanbul-reports@^3.1.4:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-iztro-hook@1.2.9:
-  version "1.2.9"
-  resolved "https://registry.npmjs.org/iztro-hook/-/iztro-hook-1.2.9.tgz#d2402ff14b293668db7f17655520d35d399d9f07"
-  integrity sha512-rs9RGXTXoFtoJJoh4WnQCVDI7I1t6l3D6U+GU0358AcxakVrbVAHyw0HboMd2HVs7Uxg3g3zHQoLHttGwU9+RQ==
+iztro-hook@1.2.10:
+  version "1.2.10"
+  resolved "https://registry.npmjs.org/iztro-hook/-/iztro-hook-1.2.10.tgz#a367704a888a23036c9713b1ab18c8e032d44c33"
+  integrity sha512-q5BOR0zMEFON8tsxRrGQHBBzB7zZ/ltH55WjvOXKrw420M/xamoacA10lwWtFc1wUX1UeRfrgONq/fAjFpp6rQ==
   dependencies:
-    iztro "2.2.1"
+    iztro "2.2.2"
 
-iztro@2.2.1:
-  version "2.2.1"
-  resolved "https://registry.npmjs.org/iztro/-/iztro-2.2.1.tgz#a3aa9d4bae133c615d9d8ef5bcea4ba8e7d4260d"
-  integrity sha512-9ODRwH/LSwq58GblZsa+eP0nEow4Lx9zupyPR7GT61wWMZSS6DZ7/o6bDlSFpm9WUG11QDoIyacgDeZT39B1cw==
+iztro@2.2.2:
+  version "2.2.2"
+  resolved "https://registry.npmjs.org/iztro/-/iztro-2.2.2.tgz#60929834554fa9c5d31fee83610f634900d4ef7e"
+  integrity sha512-3CnGQbGtakQtJB9KkmYQqOt+VZZ1zVokwn96pxvW1LXV+BVb/6cdpBkTwOpZPJ/a4z2GZ32ft7bkpMjwun63Zg==
   dependencies:
     dayjs "^1.11.10"
     i18next "^23.5.1"
-    lunar-lite "^0.0.3"
+    lunar-lite "^0.1.1"
 
 jackspeak@2.1.1, jackspeak@^2.0.3:
   version "2.1.1"
@@ -6096,10 +6096,17 @@ lru-cache@^6.0.0:
   resolved "https://registry.npmjs.org/lru-cache/-/lru-cache-10.0.1.tgz#0a3be479df549cca0e5d693ac402ff19537a6b7a"
   integrity sha512-IJ4uwUTi2qCccrioU6g9g/5rvvVl13bsdczUUcqbciD9iLr095yj8DQKdObriEvuNSx325N1rV1O0sJFszx75g==
 
-lunar-lite@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.npmjs.org/lunar-lite/-/lunar-lite-0.0.3.tgz#c0a053fb6d585a91c6496352208e28d6ff2c2dde"
-  integrity sha512-J6K/MU8CLTqBPfijc5u+wnYlxvZAS3k5knjfUakZoz2XTkOB0HerUgXNHyZS2be389J4GSYaUKvDk8mps0sNdQ==
+lunar-lite@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.npmjs.org/lunar-lite/-/lunar-lite-0.1.1.tgz#c2c114b95eae24b84ebc0702f616ed573772c244"
+  integrity sha512-ttdkDY4uZg6LtE8r4m/Vt+z48ReT8StYXPY2eXqJ6tOG3C4I11g/f/gAJXplJIRTZd+F1xOFa52tUiP2UIkqzQ==
+  dependencies:
+    lunar-typescript "^1.6.13"
+
+lunar-typescript@^1.6.13:
+  version "1.6.13"
+  resolved "https://registry.npmjs.org/lunar-typescript/-/lunar-typescript-1.6.13.tgz#99c9975f8ba4bc43af813e0155db0926d024cbcf"
+  integrity sha512-6gBJepWWRiCvpbxxeiogsd/ZIggBbH1xmS090Kat/FiM0AGFnso0bmYXL1q/opr8qrMdnjsBlMZqBvNiRKACGA==
 
 lz-string@^1.5.0:
   version "1.5.0"

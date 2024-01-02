@@ -67,9 +67,9 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
-    "iztro": "2.2.1",
-    "iztro-hook": "1.2.9",
-    "lunar-lite": "^0.0.3"
+    "iztro": "2.2.2",
+    "iztro-hook": "1.2.10",
+    "lunar-lite": "^0.1.1"
   },
   "resolutions": {
     "jackspeak": "2.1.1"

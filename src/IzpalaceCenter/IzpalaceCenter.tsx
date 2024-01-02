@@ -11,9 +11,6 @@ import { normalizeDateStr, solar2lunar } from "lunar-lite";
 import { GenderName, kot, t } from "iztro/lib/i18n";
 import { CHINESE_TIME } from "iztro/lib/data";
 
-const MIN_DATETIME = new Date(1990, 0, 31).getTime();
-const MAX_DATETIME = new Date(2101, 0, 1).getTime();
-
 type IzpalaceCenterProps = {
   astrolabe?: FunctionalAstrolabe;
   horoscope?: IFunctionalHoroscope;
@@ -142,11 +139,7 @@ export const IzpalaceCenter = ({
         break;
     }
 
-    if (
-      dt.getTime() > MIN_DATETIME &&
-      dt.getTime() < MAX_DATETIME &&
-      dt.getTime() >= birthday.getTime()
-    ) {
+    if (dt.getTime() >= birthday.getTime()) {
       setHoroscopeDate?.(dt);
       setHoroscopeHour?.(hour);
     }
@@ -186,11 +179,7 @@ export const IzpalaceCenter = ({
           break;
       }
 
-      if (
-        dt.getTime() >= MAX_DATETIME ||
-        dt.getTime() <= MIN_DATETIME ||
-        dt.getTime() < birthday.getTime()
-      ) {
+      if (dt.getTime() < birthday.getTime()) {
         return true;
       }
 
@@ -228,7 +217,15 @@ export const IzpalaceCenter = ({
       <h3 className="center-title">运限信息</h3>
       <ul className="basic-info">
         <Item title="农历：" content={horoDate.lunar} />
-        <Item title="阳历：" content={horoDate.solar} />
+        <div className={classNames("solar-horoscope")}>
+          <Item title="阳历：" content={horoDate.solar} />
+          <span
+            className="today"
+            onClick={() => setHoroscopeDate?.(new Date())}
+          >
+            今
+          </span>
+        </div>
       </ul>
       <div className="horo-buttons">
         <span
@@ -275,41 +272,31 @@ export const IzpalaceCenter = ({
           {t(CHINESE_TIME[horoscopeHour])}
         </span>
         <span
-          className={classNames("center-button", {
-            disabled: shouldBeDisabled(horoDate.solar, "hourly", 1),
-          })}
+          className={classNames("center-button")}
           onClick={() => onHoroscopeButtonClicked("hourly", 1)}
         >
           时▶
         </span>
         <span
-          className={classNames("center-button", {
-            disabled: shouldBeDisabled(horoDate.solar, "daily", 1),
-          })}
+          className={classNames("center-button")}
           onClick={() => onHoroscopeButtonClicked("daily", 1)}
         >
           日▶
         </span>
         <span
-          className={classNames("center-button", {
-            disabled: shouldBeDisabled(horoDate.solar, "monthly", 1),
-          })}
+          className={classNames("center-button")}
           onClick={() => onHoroscopeButtonClicked("monthly", 1)}
         >
           月▶
         </span>
         <span
-          className={classNames("center-button", {
-            disabled: shouldBeDisabled(horoDate.solar, "yearly", 1),
-          })}
+          className={classNames("center-button")}
           onClick={() => onHoroscopeButtonClicked("yearly", 1)}
         >
           年▶
         </span>
         <span
-          className={classNames("center-button", {
-            disabled: shouldBeDisabled(horoDate.solar, "yearly", 10),
-          })}
+          className={classNames("center-button")}
           onClick={() => onHoroscopeButtonClicked("yearly", 10)}
         >
           限▶

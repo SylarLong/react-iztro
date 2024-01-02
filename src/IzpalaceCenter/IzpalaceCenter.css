@@ -70,3 +70,23 @@
 #palace-line.decadal {
   stroke: var(--iztro-color-decadal);
 }
+
+.solar-horoscope {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.solar-horoscope .today {
+  display: inline-block;
+  font-size: var(--iztro-star-font-size-small);
+  cursor: pointer;
+  border: 1px solid var(--iztro-color-border);
+  padding: 0 5px;
+  transition: all 0.25s ease-in-out;
+}
+
+.solar-horoscope .today:hover {
+  color: var(--iztro-color-major);
+  background-color: var(--iztro-color-border);
+}
