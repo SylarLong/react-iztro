@@ -198,6 +198,8 @@
 .iztro-palace-name-body {
   font-size: var(--iztro-star-font-size-small);
   font-weight: normal;
+  position: absolute;
+  margin-top: 2px;
 }
 
 .iztro-palace-fate span {
