@@ -210,7 +210,7 @@ export const Izpalace = ({
             }
           >
             {item.name}
-            {item.heavenlyStem && `(${item.heavenlyStem})`}
+            {item.heavenlyStem && `·${item.heavenlyStem}`}
           </span>
         ))}
       </div>

@@ -39,7 +39,9 @@
   font-weight: normal;
   text-wrap: nowrap;
 }
-
+.iztro-palace-scope-age {
+  text-wrap: balance;
+}
 .iztro-palace-scope-age,
 .iztro-palace-scope-decadal {
   color: var(--iztro-color-text);
