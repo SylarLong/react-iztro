@@ -98,6 +98,21 @@
   cursor: pointer;
   text-wrap: nowrap;
 }
+.iztro-palace-name .iztro-palace-name-wrapper {
+  position: relative;
+}
+.iztro-palace-name .iztro-palace-name-taichi {
+  position: absolute;
+  font-size: 12px;
+  line-height: 14px;
+  background-color: var(--iztro-color-major);
+  padding: 0 2px;
+  color: #fff;
+  z-index: 2;
+  border-radius: 0 4px 4px 0;
+  font-weight: normal !important;
+  margin-top: 2px;
+}
 .iztro-palace-gz {
   text-align: right;
   cursor: pointer;

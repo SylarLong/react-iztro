@@ -8,8 +8,11 @@ import "./Iztrolabe.css";
 import "../theme/default.css";
 import { Scope } from "iztro/lib/data/types";
 import { HeavenlyStemKey } from "iztro/lib/i18n";
+import { getPalaceNames } from "iztro/lib/astro";
 
 export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
+  const [taichiPoint, setTaichiPoint] = useState(-1);
+  const [taichiPalaces, setTaichiPalaces] = useState<undefined | string[]>();
   const [activeHeavenlyStem, setActiveHeavenlyStem] =
     useState<HeavenlyStemKey>();
   const [hoverHeavenlyStem, setHoverHeavenlyStem] = useState<HeavenlyStemKey>();
@@ -105,6 +108,24 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
     setHoroscope(horoscopeDate ?? new Date(), horoscopeHour);
   }, [horoscopeDate, horoscopeHour]);
 
+  useEffect(() => {
+    if (taichiPoint < 0) {
+      setTaichiPalaces(undefined);
+    } else {
+      const palaces = getPalaceNames(taichiPoint);
+
+      setTaichiPalaces(palaces);
+    }
+  }, [taichiPoint]);
+
+  const toggleTaichiPoint = (index: number) => {
+    if (taichiPoint === index) {
+      setTaichiPoint(-1);
+    } else {
+      setTaichiPoint(index);
+    }
+  };
+
   return (
     <div
       className={classNames("iztro-astrolabe", "iztro-astrolabe-theme-default")}
@@ -121,11 +142,13 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
             showMonthlyScope={showMonthly}
             showDailyScope={showDaily}
             showHourlyScope={showHourly}
+            taichiPalace={taichiPalaces?.[palace.index]}
             toggleScope={toggleShowScope}
             activeHeavenlyStem={activeHeavenlyStem}
             toggleActiveHeavenlyStem={toggleActiveHeavenlyStem}
             hoverHeavenlyStem={hoverHeavenlyStem}
             setHoverHeavenlyStem={setHoverHeavenlyStem}
+            toggleTaichiPoint={toggleTaichiPoint}
             {...palace}
           />
         );

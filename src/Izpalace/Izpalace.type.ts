@@ -5,6 +5,7 @@ import { HeavenlyStemKey } from "iztro/lib/i18n";
 
 export type IzpalaceProps = {
   index: number;
+  taichiPalace?: string;
   focusedIndex?: number;
   horoscope?: IFunctionalHoroscope;
   showDecadalScope?: boolean;
@@ -18,6 +19,7 @@ export type IzpalaceProps = {
   toggleActiveHeavenlyStem?: (heavenlyStem: HeavenlyStemKey) => void;
   toggleScope?: (scope: Scope) => void;
   onFocused?: (index?: number) => void;
+  toggleTaichiPoint?: (index: number) => void;
 } & IFunctionalPalace;
 
 export type HoroscopeForPalace = {

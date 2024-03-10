@@ -3,12 +3,13 @@ import { HoroscopeForPalace, IzpalaceProps } from "./Izpalace.type";
 import classNames from "classnames";
 import "./Izpalace.css";
 import { Izstar } from "../Izstar";
-import { HeavenlyStemKey, kot, t } from "iztro/lib/i18n";
+import { HeavenlyStemKey, PalaceKey, kot, t } from "iztro/lib/i18n";
 import { fixIndex } from "iztro/lib/utils";
 import { Scope } from "iztro/lib/data/types";
 
 export const Izpalace = ({
   index,
+  taichiPalace,
   focusedIndex,
   onFocused,
   horoscope,
@@ -22,6 +23,7 @@ export const Izpalace = ({
   showDailyScope = false,
   showHourlyScope = false,
   toggleScope,
+  toggleTaichiPoint,
   ...palace
 }: IzpalaceProps) => {
   const horoscopeNames = useMemo<HoroscopeForPalace[]>(() => {
@@ -220,8 +222,19 @@ export const Izpalace = ({
             <div>{palace.changsheng12}</div>
             <div>{palace.boshi12}</div>
           </div>
-          <div className={classNames("iztro-palace-name")}>
-            {palace.name}
+          <div
+            className={classNames("iztro-palace-name")}
+            onClick={() => toggleTaichiPoint?.(index)}
+          >
+            <span className="iztro-palace-name-wrapper">
+              {palace.name}
+              <span className="iztro-palace-name-taichi">
+                {taichiPalace &&
+                  (kot<PalaceKey>(taichiPalace) === kot<PalaceKey>("命宫")
+                    ? "☯"
+                    : taichiPalace)}
+              </span>
+            </span>
             {palace.isBodyPalace && (
               <span className={classNames("iztro-palace-name-body")}>
                 ·{t("bodyPalace")}
@@ -232,7 +245,7 @@ export const Izpalace = ({
         <div>
           <div className={classNames("iztro-palace-scope")}>
             <div className={classNames("iztro-palace-scope-age")}>
-              {palace.ages.join(" ")}
+              {palace.ages.slice(0, 7).join(" ")}
             </div>
             <div className={classNames("iztro-palace-scope-decadal")}>
               {palace.decadal.range.join(" - ")}
