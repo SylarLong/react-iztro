@@ -111,7 +111,7 @@
   z-index: 2;
   border-radius: 0 4px 4px 0;
   font-weight: normal !important;
-  margin-top: 2px;
+  bottom: 0;
 }
 .iztro-palace-gz {
   text-align: right;
