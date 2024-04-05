@@ -32,6 +32,7 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
     fixLeap: props.fixLeap,
     isLeapMonth: props.isLeapMonth,
     lang: props.lang,
+    options: props.options,
   });
 
   const toggleShowScope = (scope: Scope) => {

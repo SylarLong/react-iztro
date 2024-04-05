@@ -84,4 +84,7 @@ Iztrolabe.args = {
   birthdayType: "solar",
   isLeapMonth: false,
   fixLeap: true,
+  options: {
+    yearDivide: "exact",
+  },
 };
