@@ -20,6 +20,10 @@
   --iztro-color-hourly: var(--iztro-color-text);
 }
 
+.iztro-astrolabe {
+  text-align: left;
+}
+
 .iztro-palace {
   border: 1px solid var(--iztro-color-border);
 }
