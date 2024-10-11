@@ -103,7 +103,7 @@ export default App;
 1. 克隆代码
 
   ```
-  git clone https://github.com/SylarLong/iztro-docs.git
+  git clone https://github.com/SylarLong/react-iztro.git
   ```
 
 2. 安装依赖
