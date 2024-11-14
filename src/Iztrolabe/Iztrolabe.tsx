@@ -161,6 +161,7 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
         horoscopeHour={horoscopeHour}
         setHoroscopeDate={setHoroscopeDate}
         setHoroscopeHour={setHoroscopeHour}
+        centerPalaceAlign={props.centerPalaceAlign}
         {...dynamic}
       />
     </div>
