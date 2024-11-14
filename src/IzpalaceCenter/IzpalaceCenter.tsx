@@ -22,6 +22,7 @@ type IzpalaceCenterProps = {
     React.SetStateAction<string | Date | undefined>
   >;
   setHoroscopeHour?: React.Dispatch<React.SetStateAction<number | undefined>>;
+  centerPalaceAlign?: boolean;
 };
 
 export const IzpalaceCenter = ({
@@ -33,6 +34,7 @@ export const IzpalaceCenter = ({
   horoscopeHour = 0,
   setHoroscopeDate,
   setHoroscopeHour,
+  centerPalaceAlign,
 }: IzpalaceCenterProps) => {
   const records: ItemProps[] = useMemo(
     () => [
@@ -189,7 +191,11 @@ export const IzpalaceCenter = ({
   );
 
   return (
-    <div className={classNames("iztro-center-palace")}>
+    <div
+      className={classNames("iztro-center-palace", {
+        "iztro-center-palace-centralize": centerPalaceAlign,
+      })}
+    >
       {astrolabe?.earthlyBranchOfSoulPalace && (
         <Line
           scope={arrowScope}
@@ -217,7 +223,11 @@ export const IzpalaceCenter = ({
       <h3 className="center-title">运限信息</h3>
       <ul className="basic-info">
         <Item title="农历：" content={horoDate.lunar} />
-        <div className={classNames("solar-horoscope")}>
+        <div
+          className={classNames("solar-horoscope", {
+            "solar-horoscope-centralize": centerPalaceAlign,
+          })}
+        >
           <Item title="阳历：" content={horoDate.solar} />
           <span
             className="today"
