@@ -93,6 +93,8 @@ export const Line = ({ index, scope }: LineProps) => {
         height: "100%",
         userSelect: "none",
         pointerEvents: "none",
+        top: 0,
+        left: 0,
       }}
       ref={line}
     ></canvas>

@@ -60,6 +60,18 @@ const meta: Meta<typeof IztroAstrolabe> = {
       },
       options: ["zh-CN", "zh-TW", "ja-JP", "ko-KR", "en-US", "vi-VN"],
     },
+    centerPalaceAlign: {
+      type: "boolean",
+      description: "中宫居中对齐",
+      defaultValue: false,
+      control: {
+        type: "boolean",
+        labels: {
+          true: "居中",
+          false: "默认",
+        },
+      },
+    },
   },
 };
 export default meta;
