@@ -7,7 +7,7 @@ import { useIztro } from "iztro-hook";
 import "./Iztrolabe.css";
 import "../theme/default.css";
 import { Scope } from "iztro/lib/data/types";
-import { HeavenlyStemKey } from "iztro/lib/i18n";
+import { HeavenlyStemKey, setLanguage } from "iztro/lib/i18n";
 import { getPalaceNames } from "iztro/lib/astro";
 
 export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
@@ -24,6 +24,21 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
   const [showHourly, setShowShowHourly] = useState(false);
   const [horoscopeDate, setHoroscopeDate] = useState<string | Date>();
   const [horoscopeHour, setHoroscopeHour] = useState<number>();
+  // Explicitly set language whenever props.lang changes
+  useEffect(() => {
+    if (props.lang) {
+      console.log('Setting language directly in Iztrolabe component:', props.lang);
+      // Force language change in multiple places to ensure it takes effect
+      setLanguage(props.lang);
+      // Use a small timeout to ensure the language change has time to propagate
+      const langValue = props.lang; // Store in a local variable to satisfy TypeScript
+      setTimeout(() => {
+        setLanguage(langValue);
+        console.log('Language set with timeout:', langValue);
+      }, 100);
+    }
+  }, [props.lang]);
+
   const { astrolabe, horoscope, setHoroscope } = useIztro({
     birthday: props.birthday,
     birthTime: props.birthTime,
