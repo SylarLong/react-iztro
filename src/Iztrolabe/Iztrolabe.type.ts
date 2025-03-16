@@ -5,5 +5,6 @@ export type IztrolabeProps = {
   width?: number | string;
   horoscopeDate?: string | Date;
   horoscopeHour?: number;
+  centerPalaceAlign?: boolean;
 } & IztroInput &
   NestedProps;
