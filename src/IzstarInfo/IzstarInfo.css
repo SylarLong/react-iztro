@@ -1,0 +1,16 @@
+.star-info-name {
+  font-size: 24px;
+  font-weight: bold;
+  /* color: var(--iztro-color-major); */
+}
+
+.star-info-basic {
+  margin: 10px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.star-info-basic li {
+  list-style: none;
+}

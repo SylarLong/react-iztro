@@ -59,7 +59,13 @@ export const Izstar = ({
   }, [palaceHeavenlyStem, activeHeavenlyStem, hoverHeavenlyStem]);
 
   return (
-    <div className={classNames("iztro-star", `iztro-star-${star.type}`)}>
+    <div
+      className={classNames(
+        "iztro-star",
+        `iztro-star-${star.type}`,
+        "star-with-mutagen"
+      )}
+    >
       {star.type === "major" ? (
         <IzstarInfo star={star}>
           <span
