@@ -4393,6 +4393,11 @@ entities@^2.0.0:
   resolved "https://registry.npmmirror.com/entities/-/entities-2.2.0.tgz"
   integrity sha512-p92if5Nz619I0w+akJrLZH0MX0Pb5DX39XOwQTtXSdQQOaYH03S1uIQp4mhOZtAXrxq4ViO67YTiLBo2638o9A==
 
+entities@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.npmjs.org/entities/-/entities-4.5.0.tgz"
+  integrity sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==
+
 envinfo@^7.7.3:
   version "7.10.0"
   resolved "https://registry.npmmirror.com/envinfo/-/envinfo-7.10.0.tgz"
@@ -4491,6 +4496,11 @@ escape-string-regexp@^4.0.0:
   version "4.0.0"
   resolved "https://registry.npmmirror.com/escape-string-regexp/-/escape-string-regexp-4.0.0.tgz"
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
+
+escape-string-regexp@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.npmjs.org/escape-string-regexp/-/escape-string-regexp-5.0.0.tgz"
+  integrity sha512-/veY75JbMK4j1yjvuUxuVsiS/hr/4iHs9FTT6cgTexxdE0Ly/glccBAkloH/DofkjRbZU3bnoj38mOmhkZ0lHw==
 
 escodegen@^2.1.0:
   version "2.1.0"
@@ -5265,6 +5275,46 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+hast-util-from-parse5@^8.0.0:
+  version "8.0.3"
+  resolved "https://registry.npmjs.org/hast-util-from-parse5/-/hast-util-from-parse5-8.0.3.tgz"
+  integrity sha512-3kxEVkEKt0zvcZ3hCRYI8rqrgwtlIOFMWkbclACvjlDw8Li9S2hk/d51OI0nr/gIpdMHNepwgOKqZ/sy0Clpyg==
+  dependencies:
+    "@types/hast" "^3.0.0"
+    "@types/unist" "^3.0.0"
+    devlop "^1.0.0"
+    hastscript "^9.0.0"
+    property-information "^7.0.0"
+    vfile "^6.0.0"
+    vfile-location "^5.0.0"
+    web-namespaces "^2.0.0"
+
+hast-util-parse-selector@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npmjs.org/hast-util-parse-selector/-/hast-util-parse-selector-4.0.0.tgz"
+  integrity sha512-wkQCkSYoOGCRKERFWcxMVMOcYE2K1AaNLU8DXS9arxnLOUEWbOXKXiJUNzEpqZ3JOKpnha3jkFrumEjVliDe7A==
+  dependencies:
+    "@types/hast" "^3.0.0"
+
+hast-util-raw@^9.0.0:
+  version "9.1.0"
+  resolved "https://registry.npmjs.org/hast-util-raw/-/hast-util-raw-9.1.0.tgz"
+  integrity sha512-Y8/SBAHkZGoNkpzqqfCldijcuUKh7/su31kEBp67cFY09Wy0mTRgtsLYsiIxMJxlu0f6AA5SUTbDR8K0rxnbUw==
+  dependencies:
+    "@types/hast" "^3.0.0"
+    "@types/unist" "^3.0.0"
+    "@ungap/structured-clone" "^1.0.0"
+    hast-util-from-parse5 "^8.0.0"
+    hast-util-to-parse5 "^8.0.0"
+    html-void-elements "^3.0.0"
+    mdast-util-to-hast "^13.0.0"
+    parse5 "^7.0.0"
+    unist-util-position "^5.0.0"
+    unist-util-visit "^5.0.0"
+    vfile "^6.0.0"
+    web-namespaces "^2.0.0"
+    zwitch "^2.0.0"
+
 hast-util-to-jsx-runtime@^2.0.0:
   version "2.3.6"
   resolved "https://registry.npmjs.org/hast-util-to-jsx-runtime/-/hast-util-to-jsx-runtime-2.3.6.tgz"
@@ -5286,12 +5336,36 @@ hast-util-to-jsx-runtime@^2.0.0:
     unist-util-position "^5.0.0"
     vfile-message "^4.0.0"
 
+hast-util-to-parse5@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.npmjs.org/hast-util-to-parse5/-/hast-util-to-parse5-8.0.0.tgz"
+  integrity sha512-3KKrV5ZVI8if87DVSi1vDeByYrkGzg4mEfeu4alwgmmIeARiBLKCZS2uw5Gb6nU9x9Yufyj3iudm6i7nl52PFw==
+  dependencies:
+    "@types/hast" "^3.0.0"
+    comma-separated-tokens "^2.0.0"
+    devlop "^1.0.0"
+    property-information "^6.0.0"
+    space-separated-tokens "^2.0.0"
+    web-namespaces "^2.0.0"
+    zwitch "^2.0.0"
+
 hast-util-whitespace@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npmjs.org/hast-util-whitespace/-/hast-util-whitespace-3.0.0.tgz"
   integrity sha512-88JUN06ipLwsnv+dVn+OIYOvAuvBMy/Qoi6O7mQHxdPXpjy+Cd6xRkWwux7DKO+4sYILtLBRIKgsdpS2gQc7qw==
   dependencies:
     "@types/hast" "^3.0.0"
+
+hastscript@^9.0.0:
+  version "9.0.1"
+  resolved "https://registry.npmjs.org/hastscript/-/hastscript-9.0.1.tgz"
+  integrity sha512-g7df9rMFX/SPi34tyGCyUBREQoKkapwdY/T04Qn9TDWfHhAYt4/I0gMVirzK5wEzeUqIjEB+LXC/ypb7Aqno5w==
+  dependencies:
+    "@types/hast" "^3.0.0"
+    comma-separated-tokens "^2.0.0"
+    hast-util-parse-selector "^4.0.0"
+    property-information "^7.0.0"
+    space-separated-tokens "^2.0.0"
 
 he@^1.2.0:
   version "1.2.0"
@@ -5335,6 +5409,11 @@ html-url-attributes@^3.0.0:
   version "3.0.1"
   resolved "https://registry.npmjs.org/html-url-attributes/-/html-url-attributes-3.0.1.tgz"
   integrity sha512-ol6UPyBWqsrO6EJySPz2O7ZSr856WDrEzM5zMqp+FJJLGMW35cLYmmZnl0vztAZxRUoNZJFTCohfjuIJ8I4QBQ==
+
+html-void-elements@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/html-void-elements/-/html-void-elements-3.0.0.tgz"
+  integrity sha512-bEqo66MRXsUGxWHV5IP0PUiAWwoEjba4VCzg0LjFJBpchPaTfyfCKTG6bc5F8ucKec3q5y6qOdGyYTSBEvhCrg==
 
 html-webpack-plugin@^5.5.0:
   version "5.5.3"
@@ -6201,6 +6280,11 @@ map-or-similar@^1.5.0:
   resolved "https://registry.npmmirror.com/map-or-similar/-/map-or-similar-1.5.0.tgz"
   integrity sha512-0aF7ZmVon1igznGI4VS30yugpduQW3y3GkcgGJOp7d8x8QrizhigUxjI/m2UojsXXto+jLAH3KSz+xOJTiORjg==
 
+markdown-table@^3.0.0:
+  version "3.0.4"
+  resolved "https://registry.npmjs.org/markdown-table/-/markdown-table-3.0.4.tgz"
+  integrity sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==
+
 markdown-to-jsx@^7.1.8:
   version "7.3.2"
   resolved "https://registry.npmmirror.com/markdown-to-jsx/-/markdown-to-jsx-7.3.2.tgz"
@@ -6212,6 +6296,16 @@ mdast-util-definitions@^4.0.0:
   integrity sha512-k8AJ6aNnUkB7IE+5azR9h81O5EQ/cTDXtWdMq9Kk5KcEW/8ritU5CeLg/9HhOC++nALHBlaogJ5jz0Ybk3kPMQ==
   dependencies:
     unist-util-visit "^2.0.0"
+
+mdast-util-find-and-replace@^3.0.0:
+  version "3.0.2"
+  resolved "https://registry.npmjs.org/mdast-util-find-and-replace/-/mdast-util-find-and-replace-3.0.2.tgz"
+  integrity sha512-Tmd1Vg/m3Xz43afeNxDIhWRtFZgM2VLyaf4vSTYwudTyeuTneoL3qtWMA5jeLyz/O1vDJmmV4QuScFCA2tBPwg==
+  dependencies:
+    "@types/mdast" "^4.0.0"
+    escape-string-regexp "^5.0.0"
+    unist-util-is "^6.0.0"
+    unist-util-visit-parents "^6.0.0"
 
 mdast-util-from-markdown@^2.0.0:
   version "2.0.2"
@@ -6230,6 +6324,71 @@ mdast-util-from-markdown@^2.0.0:
     micromark-util-symbol "^2.0.0"
     micromark-util-types "^2.0.0"
     unist-util-stringify-position "^4.0.0"
+
+mdast-util-gfm-autolink-literal@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/mdast-util-gfm-autolink-literal/-/mdast-util-gfm-autolink-literal-2.0.1.tgz"
+  integrity sha512-5HVP2MKaP6L+G6YaxPNjuL0BPrq9orG3TsrZ9YXbA3vDw/ACI4MEsnoDpn6ZNm7GnZgtAcONJyPhOP8tNJQavQ==
+  dependencies:
+    "@types/mdast" "^4.0.0"
+    ccount "^2.0.0"
+    devlop "^1.0.0"
+    mdast-util-find-and-replace "^3.0.0"
+    micromark-util-character "^2.0.0"
+
+mdast-util-gfm-footnote@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/mdast-util-gfm-footnote/-/mdast-util-gfm-footnote-2.1.0.tgz"
+  integrity sha512-sqpDWlsHn7Ac9GNZQMeUzPQSMzR6Wv0WKRNvQRg0KqHh02fpTz69Qc1QSseNX29bhz1ROIyNyxExfawVKTm1GQ==
+  dependencies:
+    "@types/mdast" "^4.0.0"
+    devlop "^1.1.0"
+    mdast-util-from-markdown "^2.0.0"
+    mdast-util-to-markdown "^2.0.0"
+    micromark-util-normalize-identifier "^2.0.0"
+
+mdast-util-gfm-strikethrough@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/mdast-util-gfm-strikethrough/-/mdast-util-gfm-strikethrough-2.0.0.tgz"
+  integrity sha512-mKKb915TF+OC5ptj5bJ7WFRPdYtuHv0yTRxK2tJvi+BDqbkiG7h7u/9SI89nRAYcmap2xHQL9D+QG/6wSrTtXg==
+  dependencies:
+    "@types/mdast" "^4.0.0"
+    mdast-util-from-markdown "^2.0.0"
+    mdast-util-to-markdown "^2.0.0"
+
+mdast-util-gfm-table@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/mdast-util-gfm-table/-/mdast-util-gfm-table-2.0.0.tgz"
+  integrity sha512-78UEvebzz/rJIxLvE7ZtDd/vIQ0RHv+3Mh5DR96p7cS7HsBhYIICDBCu8csTNWNO6tBWfqXPWekRuj2FNOGOZg==
+  dependencies:
+    "@types/mdast" "^4.0.0"
+    devlop "^1.0.0"
+    markdown-table "^3.0.0"
+    mdast-util-from-markdown "^2.0.0"
+    mdast-util-to-markdown "^2.0.0"
+
+mdast-util-gfm-task-list-item@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/mdast-util-gfm-task-list-item/-/mdast-util-gfm-task-list-item-2.0.0.tgz"
+  integrity sha512-IrtvNvjxC1o06taBAVJznEnkiHxLFTzgonUdy8hzFVeDun0uTjxxrRGVaNFqkU1wJR3RBPEfsxmU6jDWPofrTQ==
+  dependencies:
+    "@types/mdast" "^4.0.0"
+    devlop "^1.0.0"
+    mdast-util-from-markdown "^2.0.0"
+    mdast-util-to-markdown "^2.0.0"
+
+mdast-util-gfm@^3.0.0:
+  version "3.1.0"
+  resolved "https://registry.npmjs.org/mdast-util-gfm/-/mdast-util-gfm-3.1.0.tgz"
+  integrity sha512-0ulfdQOM3ysHhCJ1p06l0b0VKlhU0wuQs3thxZQagjcjPrlFRqY215uZGHHJan9GEAXd9MbfPjFJz+qMkVR6zQ==
+  dependencies:
+    mdast-util-from-markdown "^2.0.0"
+    mdast-util-gfm-autolink-literal "^2.0.0"
+    mdast-util-gfm-footnote "^2.0.0"
+    mdast-util-gfm-strikethrough "^2.0.0"
+    mdast-util-gfm-table "^2.0.0"
+    mdast-util-gfm-task-list-item "^2.0.0"
+    mdast-util-to-markdown "^2.0.0"
 
 mdast-util-mdx-expression@^2.0.0:
   version "2.0.1"
@@ -6382,6 +6541,85 @@ micromark-core-commonmark@^2.0.0:
     micromark-util-resolve-all "^2.0.0"
     micromark-util-subtokenize "^2.0.0"
     micromark-util-symbol "^2.0.0"
+    micromark-util-types "^2.0.0"
+
+micromark-extension-gfm-autolink-literal@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/micromark-extension-gfm-autolink-literal/-/micromark-extension-gfm-autolink-literal-2.1.0.tgz"
+  integrity sha512-oOg7knzhicgQ3t4QCjCWgTmfNhvQbDDnJeVu9v81r7NltNCVmhPy1fJRX27pISafdjL+SVc4d3l48Gb6pbRypw==
+  dependencies:
+    micromark-util-character "^2.0.0"
+    micromark-util-sanitize-uri "^2.0.0"
+    micromark-util-symbol "^2.0.0"
+    micromark-util-types "^2.0.0"
+
+micromark-extension-gfm-footnote@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/micromark-extension-gfm-footnote/-/micromark-extension-gfm-footnote-2.1.0.tgz"
+  integrity sha512-/yPhxI1ntnDNsiHtzLKYnE3vf9JZ6cAisqVDauhp4CEHxlb4uoOTxOCJ+9s51bIB8U1N1FJ1RXOKTIlD5B/gqw==
+  dependencies:
+    devlop "^1.0.0"
+    micromark-core-commonmark "^2.0.0"
+    micromark-factory-space "^2.0.0"
+    micromark-util-character "^2.0.0"
+    micromark-util-normalize-identifier "^2.0.0"
+    micromark-util-sanitize-uri "^2.0.0"
+    micromark-util-symbol "^2.0.0"
+    micromark-util-types "^2.0.0"
+
+micromark-extension-gfm-strikethrough@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/micromark-extension-gfm-strikethrough/-/micromark-extension-gfm-strikethrough-2.1.0.tgz"
+  integrity sha512-ADVjpOOkjz1hhkZLlBiYA9cR2Anf8F4HqZUO6e5eDcPQd0Txw5fxLzzxnEkSkfnD0wziSGiv7sYhk/ktvbf1uw==
+  dependencies:
+    devlop "^1.0.0"
+    micromark-util-chunked "^2.0.0"
+    micromark-util-classify-character "^2.0.0"
+    micromark-util-resolve-all "^2.0.0"
+    micromark-util-symbol "^2.0.0"
+    micromark-util-types "^2.0.0"
+
+micromark-extension-gfm-table@^2.0.0:
+  version "2.1.1"
+  resolved "https://registry.npmjs.org/micromark-extension-gfm-table/-/micromark-extension-gfm-table-2.1.1.tgz"
+  integrity sha512-t2OU/dXXioARrC6yWfJ4hqB7rct14e8f7m0cbI5hUmDyyIlwv5vEtooptH8INkbLzOatzKuVbQmAYcbWoyz6Dg==
+  dependencies:
+    devlop "^1.0.0"
+    micromark-factory-space "^2.0.0"
+    micromark-util-character "^2.0.0"
+    micromark-util-symbol "^2.0.0"
+    micromark-util-types "^2.0.0"
+
+micromark-extension-gfm-tagfilter@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/micromark-extension-gfm-tagfilter/-/micromark-extension-gfm-tagfilter-2.0.0.tgz"
+  integrity sha512-xHlTOmuCSotIA8TW1mDIM6X2O1SiX5P9IuDtqGonFhEK0qgRI4yeC6vMxEV2dgyr2TiD+2PQ10o+cOhdVAcwfg==
+  dependencies:
+    micromark-util-types "^2.0.0"
+
+micromark-extension-gfm-task-list-item@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.npmjs.org/micromark-extension-gfm-task-list-item/-/micromark-extension-gfm-task-list-item-2.1.0.tgz"
+  integrity sha512-qIBZhqxqI6fjLDYFTBIa4eivDMnP+OZqsNwmQ3xNLE4Cxwc+zfQEfbs6tzAo2Hjq+bh6q5F+Z8/cksrLFYWQQw==
+  dependencies:
+    devlop "^1.0.0"
+    micromark-factory-space "^2.0.0"
+    micromark-util-character "^2.0.0"
+    micromark-util-symbol "^2.0.0"
+    micromark-util-types "^2.0.0"
+
+micromark-extension-gfm@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/micromark-extension-gfm/-/micromark-extension-gfm-3.0.0.tgz"
+  integrity sha512-vsKArQsicm7t0z2GugkCKtZehqUm31oeGBV/KVSorWSy8ZlNAv7ytjFhvaryUiCUJYqs+NoE6AFhpQvBTM6Q4w==
+  dependencies:
+    micromark-extension-gfm-autolink-literal "^2.0.0"
+    micromark-extension-gfm-footnote "^2.0.0"
+    micromark-extension-gfm-strikethrough "^2.0.0"
+    micromark-extension-gfm-table "^2.0.0"
+    micromark-extension-gfm-tagfilter "^2.0.0"
+    micromark-extension-gfm-task-list-item "^2.0.0"
+    micromark-util-combine-extensions "^2.0.0"
     micromark-util-types "^2.0.0"
 
 micromark-factory-destination@^2.0.0:
@@ -6999,6 +7237,13 @@ parse-json@^5.0.0:
     json-parse-even-better-errors "^2.3.0"
     lines-and-columns "^1.1.6"
 
+parse5@^7.0.0:
+  version "7.2.1"
+  resolved "https://registry.npmjs.org/parse5/-/parse5-7.2.1.tgz"
+  integrity sha512-BuBYQYlv1ckiPdQi/ohiivi9Sagc9JG+Ozs0r7b/0iK3sKmrb0b9FdWdBbOdx6hBCM/F9Ir82ofnBhtZOjCRPQ==
+  dependencies:
+    entities "^4.5.0"
+
 parseurl@~1.3.2, parseurl@~1.3.3:
   version "1.3.3"
   resolved "https://registry.npmmirror.com/parseurl/-/parseurl-1.3.3.tgz"
@@ -7252,6 +7497,11 @@ prop-types@^15.7.2:
     loose-envify "^1.4.0"
     object-assign "^4.1.1"
     react-is "^16.13.1"
+
+property-information@^6.0.0:
+  version "6.5.0"
+  resolved "https://registry.npmjs.org/property-information/-/property-information-6.5.0.tgz"
+  integrity sha512-PgTgs/BlvHxOu8QuEN7wi5A0OmXaBcHpmCSTehcs6Uuu9IkDIEo13Hy7n898RHfrQ49vKCoGeWZSaAK01nwVig==
 
 property-information@^7.0.0:
   version "7.0.0"
@@ -7687,6 +7937,15 @@ regjsparser@^0.9.1:
   dependencies:
     jsesc "~0.5.0"
 
+rehype-raw@^7.0.0:
+  version "7.0.0"
+  resolved "https://registry.npmjs.org/rehype-raw/-/rehype-raw-7.0.0.tgz"
+  integrity sha512-/aE8hCfKlQeA8LmyeyQvQF3eBiLRGNlfBJEvWH7ivp9sBqs7TNqBL5X3v157rM4IFETqDnIOO+z5M/biZbo9Ww==
+  dependencies:
+    "@types/hast" "^3.0.0"
+    hast-util-raw "^9.0.0"
+    vfile "^6.0.0"
+
 relateurl@^0.2.7:
   version "0.2.7"
   resolved "https://registry.npmmirror.com/relateurl/-/relateurl-0.2.7.tgz"
@@ -7702,6 +7961,18 @@ remark-external-links@^8.0.0:
     mdast-util-definitions "^4.0.0"
     space-separated-tokens "^1.0.0"
     unist-util-visit "^2.0.0"
+
+remark-gfm@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.npmjs.org/remark-gfm/-/remark-gfm-4.0.1.tgz"
+  integrity sha512-1quofZ2RQ9EWdeN34S79+KExV1764+wCUGop5CPL1WGdD0ocPpu91lzPGbwWMECpEpd42kJGQwzRfyov9j4yNg==
+  dependencies:
+    "@types/mdast" "^4.0.0"
+    mdast-util-gfm "^3.0.0"
+    micromark-extension-gfm "^3.0.0"
+    remark-parse "^11.0.0"
+    remark-stringify "^11.0.0"
+    unified "^11.0.0"
 
 remark-parse@^11.0.0:
   version "11.0.0"
@@ -7732,6 +8003,15 @@ remark-slug@^6.0.0:
     github-slugger "^1.0.0"
     mdast-util-to-string "^1.0.0"
     unist-util-visit "^2.0.0"
+
+remark-stringify@^11.0.0:
+  version "11.0.0"
+  resolved "https://registry.npmjs.org/remark-stringify/-/remark-stringify-11.0.0.tgz"
+  integrity sha512-1OSmLd3awB/t8qdoEOMazZkNsfVTeY4fTsgzcQFdXNq8ToTN4ZGwrMnlda4K6smTFKD+GRV6O48i6Z4iKgPPpw==
+  dependencies:
+    "@types/mdast" "^4.0.0"
+    mdast-util-to-markdown "^2.0.0"
+    unified "^11.0.0"
 
 renderkid@^3.0.0:
   version "3.0.0"
@@ -8725,6 +9005,14 @@ vary@~1.1.2:
   resolved "https://registry.npmmirror.com/vary/-/vary-1.1.2.tgz"
   integrity sha512-BNGbWLfd0eUPabhkXUVm0j8uuvREyTh5ovRa/dyow/BqAbZJyC+5fU+IzQOzmAKzYqYRAISoRhdQr3eIZ/PXqg==
 
+vfile-location@^5.0.0:
+  version "5.0.3"
+  resolved "https://registry.npmjs.org/vfile-location/-/vfile-location-5.0.3.tgz"
+  integrity sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg==
+  dependencies:
+    "@types/unist" "^3.0.0"
+    vfile "^6.0.0"
+
 vfile-message@^4.0.0:
   version "4.0.2"
   resolved "https://registry.npmjs.org/vfile-message/-/vfile-message-4.0.2.tgz"
@@ -8773,6 +9061,11 @@ wcwidth@^1.0.1:
   integrity sha512-XHPEwS0q6TaxcvG85+8EYkbiCux2XtWG2mkc47Ng2A77BQu9+DqIOJldST4HgPkuea7dvKSj5VgX3P1d4rW8Tg==
   dependencies:
     defaults "^1.0.3"
+
+web-namespaces@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.npmjs.org/web-namespaces/-/web-namespaces-2.0.1.tgz"
+  integrity sha512-bKr1DkiNa2krS7qxNtdrtHAmzuYGFQLiQ13TsorsdT6ULTkPLKuu5+GsFpDlg6JFjUTwX2DyhMPG2be8uPrqsQ==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"

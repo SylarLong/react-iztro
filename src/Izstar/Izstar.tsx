@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { MUTAGEN } from "iztro/lib/data";
 import { MutagenKey, kot, t } from "iztro/lib/i18n";
 import { getMutagensByHeavenlyStem } from "iztro/lib/utils";
-import { IzstarInfo } from "../IzstarInfo";
+import { IzstarInfo } from "../IzstarWiki";
 
 export const Izstar = ({
   horoscopeMutagens,

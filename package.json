@@ -71,7 +71,9 @@
     "iztro-hook": "1.2.21",
     "lunar-lite": "^0.2.3",
     "react-markdown": "^10.1.0",
-    "react-tiny-popover": "^8.1.6"
+    "react-tiny-popover": "^8.1.6",
+    "rehype-raw": "^7.0.0",
+    "remark-gfm": "^4.0.1"
   },
   "resolutions": {
     "jackspeak": "2.1.1"
