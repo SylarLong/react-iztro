@@ -69,7 +69,8 @@
     "classnames": "^2.3.2",
     "iztro": "2.4.5",
     "iztro-hook": "1.2.21",
-    "lunar-lite": "^0.2.3"
+    "lunar-lite": "^0.2.3",
+    "react-tiny-popover": "^8.1.6"
   },
   "resolutions": {
     "jackspeak": "2.1.1"

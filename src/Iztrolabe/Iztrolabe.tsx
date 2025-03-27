@@ -7,7 +7,7 @@ import { useIztro } from "iztro-hook";
 import "./Iztrolabe.css";
 import "../theme/default.css";
 import { Scope } from "iztro/lib/data/types";
-import { HeavenlyStemKey } from "iztro/lib/i18n";
+import { HeavenlyStemKey, StarName } from "iztro/lib/i18n";
 import { getPalaceNames } from "iztro/lib/astro";
 
 export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
@@ -118,6 +118,22 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
       setTaichiPalaces(palaces);
     }
   }, [taichiPoint]);
+
+  useEffect(() => {
+    console.log("astrolabe rerenders");
+    if (astrolabe) {
+      astrolabe.use(() => {
+        console.log("custom plugin", astrolabe.palaces);
+        astrolabe.palaces = astrolabe.palaces.map((place) => ({
+          ...place,
+          majorStars: place.majorStars.map((ms) => ({
+            ...ms,
+            name: (ms.name + "a") as StarName,
+          })),
+        }));
+      });
+    }
+  }, [astrolabe]);
 
   const toggleTaichiPoint = (index: number) => {
     if (taichiPoint === index) {
