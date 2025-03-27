@@ -11,18 +11,16 @@ export const IzstarInfo = ({ star, children }: IzstarInfoProps) => {
   const [md, setMd] = useState("");
 
   useEffect(() => {
+    // TODO remove
     if (star.name === "紫微") {
       setIsPopoverOpen(true);
     }
+
     const loadMarkdown = async () => {
       try {
         // 动态导入匹配的 MD 文件
         const file = await import(`./doc/${star.name}.md`);
-        console.log("file:", file.default);
-        // const response = await fetch(file.default);
-        // const text = await response.text();
         setMd(file.default);
-        // console.log(text);
       } catch (error) {
         console.error("加载 Markdown 文件失败:", error);
       }
@@ -33,7 +31,7 @@ export const IzstarInfo = ({ star, children }: IzstarInfoProps) => {
 
   return (
     <Popover
-      containerClassName="iztro-astrolabe-theme-default iztro-star-info"
+      containerClassName="iztro-astrolabe-theme-default iztro-star-wiki"
       isOpen={isPopoverOpen}
       positions={["right", "bottom", "top", "left"]}
       onClickOutside={() => setIsPopoverOpen(false)}
