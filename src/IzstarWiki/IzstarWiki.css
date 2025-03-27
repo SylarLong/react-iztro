@@ -1,4 +1,8 @@
-.star-info-wiki {
-  font-size: 24px;
-  font-weight: bold;
+.iztro-star-wiki {
+  width: 600px;
+  height: 600px;
+  overflow: auto;
+  background-color: white;
+  padding: 16px;
+  border: 1px solid var(--iztro-color-border);
 }

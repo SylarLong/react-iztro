@@ -1,6 +1,7 @@
 import React, { cloneElement, useEffect, useState } from "react";
 import { IzstarInfoProps } from "./IzstarWiki.type";
 import { Popover } from "react-tiny-popover";
+import "./markdown.css";
 import "./IzstarWiki.css";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -31,24 +32,20 @@ export const IzstarInfo = ({ star, children }: IzstarInfoProps) => {
 
   return (
     <Popover
-      containerClassName="iztro-astrolabe-theme-default iztro-star-wiki"
+      containerClassName="iztro-astrolabe-theme-default"
       isOpen={isPopoverOpen}
       positions={["right", "bottom", "top", "left"]}
       onClickOutside={() => setIsPopoverOpen(false)}
       padding={10}
       content={() => (
-        <div
-          style={{
-            width: "600px",
-            height: "600px",
-            overflow: "auto",
-            backgroundColor: "white",
-            padding: "16px",
-            border: "1px solid black",
-          }}
-        >
-          <h1 className="text-3xl font-bold underline">Hello world!</h1>
-          <Markdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
+        <div className="markdown-body iztro-star-wiki">
+          <Markdown
+            remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
+            remarkRehypeOptions={{
+              allowDangerousHtml: true,
+            }}
+          >
             {md}
           </Markdown>
         </div>
