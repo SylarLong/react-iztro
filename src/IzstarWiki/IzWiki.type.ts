@@ -1,8 +1,8 @@
-import FunctionalStar from "iztro/lib/star/FunctionalStar";
+import { Data, Node } from "mdast";
 
 export type IzstarInfoProps = {
   children: JSX.Element;
-  star: FunctionalStar;
+  source: string;
 };
 
 /**
@@ -76,3 +76,31 @@ export type IzstarInfo = {
    */
   celestialConfigurations: CelestialConfiguration[];
 };
+
+interface WikilinkData extends Data {
+  alias?: string;
+  exists?: boolean;
+}
+
+export interface Wikilink extends Node {
+  type: "wikilink";
+  value: string | null;
+  data: WikilinkData;
+}
+
+declare module "mdast" {
+  interface RootContentMap {
+    wikilink: Wikilink;
+  }
+}
+
+declare module "micromark-util-types" {
+  interface TokenTypeMap {
+    wikilink: "wikilink";
+    wikilinkMarker: "wikilinkMarker";
+    wikilinkData: "wikilinkData";
+    wikilinkTarget: "wikilinkTarget";
+    wikilinkAlias: "wikilinkAlias";
+    wikilinkAliasMarker: "wikilinkAliasMarker";
+  }
+}

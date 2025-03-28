@@ -18,6 +18,7 @@
   --iztro-color-monthly: var(--iztro-color-nice);
   --iztro-color-daily: var(--iztro-color-decorator-1);
   --iztro-color-hourly: var(--iztro-color-text);
+  --iztro-color-purple: #7852ee;
 }
 
 .iztro-astrolabe {

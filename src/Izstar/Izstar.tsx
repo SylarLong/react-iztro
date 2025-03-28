@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { MUTAGEN } from "iztro/lib/data";
 import { MutagenKey, kot, t } from "iztro/lib/i18n";
 import { getMutagensByHeavenlyStem } from "iztro/lib/utils";
-import { IzstarInfo } from "../IzstarWiki";
+import { IzWiki } from "../IzstarWiki";
 
 export const Izstar = ({
   horoscopeMutagens,
@@ -67,7 +67,7 @@ export const Izstar = ({
       )}
     >
       {star.type === "major" ? (
-        <IzstarInfo star={star}>
+        <IzWiki source={star.name}>
           <span
             className={classNames(
               "star-with-mutagen",
@@ -81,7 +81,7 @@ export const Izstar = ({
           >
             {star.name}
           </span>
-        </IzstarInfo>
+        </IzWiki>
       ) : (
         <span
           className={classNames(

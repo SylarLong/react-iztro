@@ -1,1 +1,1 @@
-export * from "./IzstarWiki";
+export * from "./IzWiki";
