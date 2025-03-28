@@ -4,6 +4,7 @@ export type IzstarInfoProps = {
   children: JSX.Element;
   source: string;
   lazy?: boolean;
+  subHeadings?: string[];
 };
 
 interface WikilinkData extends Data {

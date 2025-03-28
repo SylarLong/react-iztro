@@ -67,6 +67,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
+    "hast-util-to-text": "^4.0.2",
     "iztro": "2.4.5",
     "iztro-hook": "1.2.21",
     "lunar-lite": "^0.2.3",

@@ -1,6 +1,6 @@
 .iztro-wiki {
   width: 600px;
-  height: 600px;
+  max-height: 600px;
   overflow: auto;
   background-color: white;
   padding: 16px;

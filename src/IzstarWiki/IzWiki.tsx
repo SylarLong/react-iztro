@@ -7,8 +7,14 @@ import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { remarkWikilink } from "./remark-wikilink";
+import rehypePart from "./rehype-part";
 
-export const IzWiki = ({ source, children, lazy = true }: IzstarInfoProps) => {
+export const IzWiki = ({
+  source,
+  children,
+  lazy = true,
+  subHeadings = [],
+}: IzstarInfoProps) => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [md, setMd] = useState("");
 
@@ -75,7 +81,7 @@ export const IzWiki = ({ source, children, lazy = true }: IzstarInfoProps) => {
       containerClassName="iztro-astrolabe-theme-default"
       isOpen={isPopoverOpen}
       positions={["right", "bottom", "top", "left"]}
-      // onClickOutside={() => setIsPopoverOpen(false)}
+      onClickOutside={() => setIsPopoverOpen(false)}
       padding={10}
       content={({ position, childRect, popoverRect }) => (
         <ArrowContainer // if you'd like an arrow, you can import the ArrowContainer!
@@ -91,7 +97,10 @@ export const IzWiki = ({ source, children, lazy = true }: IzstarInfoProps) => {
           <div className="markdown-body iztro-wiki">
             <Markdown
               remarkPlugins={[remarkGfm, remarkWikilink]}
-              rehypePlugins={[rehypeRaw]}
+              rehypePlugins={[
+                rehypeRaw,
+                [rehypePart, { headings: subHeadings }],
+              ]}
               remarkRehypeOptions={{
                 allowDangerousHtml: true,
               }}
@@ -102,7 +111,7 @@ export const IzWiki = ({ source, children, lazy = true }: IzstarInfoProps) => {
                   if ("data-wikilink" in rest && href) {
                     const [source, ...subHeadings] = href.split("#");
                     return (
-                      <IzWiki source={source}>
+                      <IzWiki source={source} subHeadings={subHeadings}>
                         <span className="iztro-wiki-link">{children}</span>
                       </IzWiki>
                     );
