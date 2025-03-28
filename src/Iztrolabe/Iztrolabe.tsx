@@ -9,6 +9,7 @@ import "../theme/default.css";
 import { Scope } from "iztro/lib/data/types";
 import { HeavenlyStemKey } from "iztro/lib/i18n";
 import { getPalaceNames } from "iztro/lib/astro";
+import { MarkdownFile } from "../IzstarWiki/IzWiki.type";
 
 export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
   const [taichiPoint, setTaichiPoint] = useState(-1);
@@ -127,10 +128,91 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
     }
   };
 
+  // indexedDB
+  const saveToIndexedDB = async (files: MarkdownFile[]) => {
+    const db = await window.indexedDB.open("iztro", 1);
+    db.onupgradeneeded = (event) => {
+      const db = (event.target as IDBOpenDBRequest).result;
+      if (!db.objectStoreNames.contains("markdowns")) {
+        db.createObjectStore("markdowns", { keyPath: "name" });
+      }
+    };
+
+    db.onsuccess = () => {
+      const transaction = db.result.transaction("markdowns", "readwrite");
+      const store = transaction.objectStore("markdowns");
+      files.forEach((file) => store.put(file));
+    };
+  };
+
+  // 清空数据库中的所有记录
+  const clearDatabase = (): Promise<void> => {
+    return new Promise((resolve, reject) => {
+      const request = window.indexedDB.open("iztro", 1);
+      request.onsuccess = (event) => {
+        const db = (event.target as IDBOpenDBRequest).result;
+        const transaction = db.transaction("markdowns", "readwrite");
+        const store = transaction.objectStore("markdowns");
+        const clearRequest = store.clear(); // 清空数据库
+
+        clearRequest.onsuccess = () => resolve();
+        clearRequest.onerror = (error) => reject(error);
+      };
+    });
+  };
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const files = event.target.files;
+    if (!files) {
+      return;
+    }
+    const fileData: MarkdownFile[] = [];
+    let processedFiles = 0;
+
+    Array.from(files).forEach((file) => {
+      if (file.name.endsWith(".md")) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          if (e.target) {
+            fileData.push({
+              name: file.webkitRelativePath,
+              content: e.target.result as string,
+            });
+          }
+          processedFiles++;
+          // 当所有文件都读取完后，存入 IndexedDB
+          if (processedFiles === files.length) {
+            clearDatabase().then(() => {
+              saveToIndexedDB(fileData);
+            });
+          }
+        };
+        reader.readAsText(file);
+      } else {
+        processedFiles++;
+      }
+    });
+  };
+
   return (
     <div
       className={classNames("iztro-astrolabe", "iztro-astrolabe-theme-default")}
     >
+      <div>
+        <span>上传本地文档库</span>
+        <br />
+        <input
+          type="file"
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          /* @ts-expect-error */
+          directory=""
+          webkitdirectory=""
+          multiple
+          onChange={handleFileUpload}
+        />
+        <br />
+        <button onClick={async () => await clearDatabase()}>清空缓存</button>
+      </div>
       {astrolabe?.palaces.map((palace) => {
         return (
           <Izpalace
