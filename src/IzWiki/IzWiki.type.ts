@@ -1,6 +1,6 @@
 import { Data, Node } from "mdast";
 
-export type IzstarInfoProps = {
+export type IzWikiProps = {
   children: JSX.Element;
   source: string;
   lazy?: boolean;

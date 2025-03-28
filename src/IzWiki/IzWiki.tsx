@@ -1,5 +1,5 @@
 import React, { cloneElement, useEffect, useState } from "react";
-import { IzstarInfoProps } from "./IzWiki.type";
+import { IzWikiProps } from "./IzWiki.type";
 import { Popover, ArrowContainer } from "react-tiny-popover";
 import "./markdown.css";
 import "./IzWiki.css";
@@ -14,7 +14,7 @@ export const IzWiki = ({
   children,
   lazy = true,
   subHeadings = [],
-}: IzstarInfoProps) => {
+}: IzWikiProps) => {
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
   const [md, setMd] = useState("");
 
