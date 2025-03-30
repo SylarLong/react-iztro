@@ -20,13 +20,16 @@ export const IzWiki = ({
   const [md, setMd] = useState("");
 
   const loadDefaultMarkdown = async () => {
-    try {
-      // 动态导入匹配的 MD 文件
-      const file = await import(`./doc/${source}.md`);
-      setMd(file.default);
-    } catch (error) {
-      console.error("加载 Markdown 文件失败:", error);
-    }
+    const filePath = `/docs/${source}.md`;
+    fetch(filePath)
+      .then((res) => {
+        if (res.ok) {
+          return res.text();
+        } else {
+          return "# Markdown Not Found";
+        }
+      })
+      .then((text) => setMd(text));
   };
 
   const loadMarkdownByName = (name: string) => {

@@ -56,6 +56,7 @@
     "@storybook/react-vite": "^8.6.11",
     "@storybook/react-webpack5": "^8.6.11",
     "@storybook/test": "^8.6.11",
+    "@types/node": "^22.13.14",
     "@types/react": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
@@ -69,10 +70,13 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.17",
+    "class-variance-authority": "^0.7.1",
     "classnames": "^2.3.2",
+    "clsx": "^2.1.1",
     "hast-util-to-text": "^4.0.2",
     "iztro": "2.4.5",
     "iztro-hook": "1.2.21",
+    "lucide-react": "^0.485.0",
     "lunar-lite": "^0.2.3",
     "mdast-util-from-markdown": "^2.0.2",
     "micromark-util-character": "^2.1.1",
@@ -83,7 +87,9 @@
     "rehype-raw": "^7.0.0",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1",
-    "tailwindcss": "^4.0.17"
+    "tailwind-merge": "^3.0.2",
+    "tailwindcss": "^4.0.17",
+    "tw-animate-css": "^1.2.5"
   },
   "resolutions": {
     "jackspeak": "2.1.1"

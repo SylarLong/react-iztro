@@ -6,6 +6,7 @@ import classNames from "classnames";
 import { useIztro } from "iztro-hook";
 import "./Iztrolabe.css";
 import "../theme/default.css";
+import "../styles/global.css";
 import { Scope } from "iztro/lib/data/types";
 import { HeavenlyStemKey } from "iztro/lib/i18n";
 import { getPalaceNames } from "iztro/lib/astro";
