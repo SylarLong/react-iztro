@@ -69,6 +69,8 @@
     "typescript": "^5.0.1"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/vite": "^4.0.17",
     "class-variance-authority": "^0.7.1",
     "classnames": "^2.3.2",
