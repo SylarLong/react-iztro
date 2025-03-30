@@ -1,16 +1,16 @@
 .iztro-wiki {
-  width: 600px;
-  max-height: 600px;
-  overflow: auto;
-  background-color: white;
-  padding: 16px;
-  border: 1px solid var(--iztro-color-border);
+  z-index: 3;
 
-  .iztro-wiki-link {
-    color: var(--iztro-color-purple);
-  }
+  .iztro-wiki-content {
+    width: 600px;
+    max-height: 600px;
+    overflow: auto;
+    background-color: white;
+    padding: 16px;
+    border: 1px solid var(--iztro-color-border);
 
-  .popover-arrow {
-    border-right: 10px solid var(--iztro-color-border);
+    .iztro-wiki-link {
+      color: var(--iztro-color-purple);
+    }
   }
 }

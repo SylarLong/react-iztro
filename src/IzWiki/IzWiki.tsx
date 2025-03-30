@@ -1,6 +1,6 @@
 import React, { cloneElement, useEffect, useState } from "react";
 import { IzWikiProps } from "./IzWiki.type";
-import { Popover, ArrowContainer } from "react-tiny-popover";
+import { Popover } from "react-tiny-popover";
 import "./markdown.css";
 import "./IzWiki.css";
 import Markdown from "react-markdown";
@@ -8,6 +8,7 @@ import remarkGfm from "remark-gfm";
 import rehypeRaw from "rehype-raw";
 import { remarkWikilink } from "./remark-wikilink";
 import rehypePart from "./rehype-part";
+import remarkFrontmatter from "remark-frontmatter";
 
 export const IzWiki = ({
   source,
@@ -28,12 +29,17 @@ export const IzWiki = ({
     }
   };
 
-  // 根据文件名从 IndexedDB 获取对应的文件
   const loadMarkdownByName = (name: string) => {
     console.log("load markdown of", source);
     const request = window.indexedDB.open("iztro", 1);
     request.onsuccess = (event) => {
       const db = (event.target as IDBOpenDBRequest).result;
+
+      if (!db.objectStoreNames.contains("markdowns")) {
+        loadDefaultMarkdown();
+        return;
+      }
+
       const transaction = db.transaction("markdowns", "readonly");
       const store = transaction.objectStore("markdowns");
 
@@ -78,56 +84,42 @@ export const IzWiki = ({
 
   return (
     <Popover
-      containerClassName="iztro-astrolabe-theme-default"
+      containerClassName="iztro-astrolabe-theme-default iztro-wiki"
       isOpen={isPopoverOpen}
       positions={["right", "bottom", "top", "left"]}
       onClickOutside={() => setIsPopoverOpen(false)}
       padding={10}
-      content={({ position, childRect, popoverRect }) => (
-        <ArrowContainer // if you'd like an arrow, you can import the ArrowContainer!
-          position={position}
-          childRect={childRect}
-          popoverRect={popoverRect}
-          arrowColor={"red"}
-          arrowSize={10}
-          arrowStyle={{ opacity: 0.7 }}
-          className="popover-arrow-container"
-          arrowClassName="popover-arrow"
-        >
-          <div className="markdown-body iztro-wiki">
-            <Markdown
-              remarkPlugins={[remarkGfm, remarkWikilink]}
-              rehypePlugins={[
-                rehypeRaw,
-                [rehypePart, { headings: subHeadings }],
-              ]}
-              remarkRehypeOptions={{
-                allowDangerousHtml: true,
-              }}
-              components={{
-                a(props) {
-                  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                  const { node, className, href, children, ...rest } = props;
-                  if ("data-wikilink" in rest && href) {
-                    const [source, ...subHeadings] = href.split("#");
-                    return (
-                      <IzWiki source={source} subHeadings={subHeadings}>
-                        <span className="iztro-wiki-link">{children}</span>
-                      </IzWiki>
-                    );
-                  }
+      content={() => (
+        <div className="markdown-body iztro-wiki-content">
+          <Markdown
+            remarkPlugins={[remarkFrontmatter, remarkGfm, remarkWikilink]}
+            rehypePlugins={[rehypeRaw, [rehypePart, { headings: subHeadings }]]}
+            remarkRehypeOptions={{
+              allowDangerousHtml: true,
+            }}
+            components={{
+              a(props) {
+                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                const { node, className, href, children, ...rest } = props;
+                if ("data-wikilink" in rest && href) {
+                  const [source, ...subHeadings] = href.split("#");
                   return (
-                    <a className={className} href={href} {...rest}>
-                      {children}
-                    </a>
+                    <IzWiki source={source} subHeadings={subHeadings}>
+                      <span className="iztro-wiki-link">{children}</span>
+                    </IzWiki>
                   );
-                },
-              }}
-            >
-              {md}
-            </Markdown>
-          </div>
-        </ArrowContainer>
+                }
+                return (
+                  <a className={className} href={href} {...rest}>
+                    {children}
+                  </a>
+                );
+              },
+            }}
+          >
+            {md}
+          </Markdown>
+        </div>
       )}
       children={cloneElement(children, {
         onClick: () => setIsPopoverOpen(!isPopoverOpen),

@@ -78,6 +78,7 @@
     "react-markdown": "^10.1.0",
     "react-tiny-popover": "^8.1.6",
     "rehype-raw": "^7.0.0",
+    "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1"
   },
   "resolutions": {

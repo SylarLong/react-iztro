@@ -9,7 +9,7 @@ import "../theme/default.css";
 import { Scope } from "iztro/lib/data/types";
 import { HeavenlyStemKey } from "iztro/lib/i18n";
 import { getPalaceNames } from "iztro/lib/astro";
-import { MarkdownFile } from "../IzstarWiki/IzWiki.type";
+import { MarkdownFile } from "../IzWiki/IzWiki.type";
 
 export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
   const [taichiPoint, setTaichiPoint] = useState(-1);
@@ -128,7 +128,6 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
     }
   };
 
-  // indexedDB
   const saveToIndexedDB = async (files: MarkdownFile[]) => {
     const db = await window.indexedDB.open("iztro", 1);
     db.onupgradeneeded = (event) => {
@@ -145,7 +144,6 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
     };
   };
 
-  // 清空数据库中的所有记录
   const clearDatabase = (): Promise<void> => {
     return new Promise((resolve, reject) => {
       const request = window.indexedDB.open("iztro", 1);
