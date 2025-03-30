@@ -197,7 +197,7 @@ export const Iztrolabe: React.FC<IztrolabeProps> = (props) => {
       className={classNames("iztro-astrolabe", "iztro-astrolabe-theme-default")}
     >
       <div>
-        <span>上传本地文档库</span>
+        <span className="underline">上传本地文档库</span>
         <br />
         <input
           type="file"

@@ -4,6 +4,7 @@
   "description": "基于iztro实现的react紫微斗数星盘组件。A react component used to generate an astrolabe of ziweidoushu based on iztro.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "type": "module",
   "scripts": {
     "lint": "eslint . --ext .ts",
     "format": "prettier --write \"src/**/*.ts\"",
@@ -45,15 +46,16 @@
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-react": "^7.22.15",
     "@babel/preset-typescript": "^7.22.15",
-    "@storybook/addon-essentials": "^7.4.0",
-    "@storybook/addon-interactions": "^7.4.0",
-    "@storybook/addon-links": "^7.4.0",
-    "@storybook/addon-onboarding": "^1.0.8",
-    "@storybook/blocks": "^7.4.0",
-    "@storybook/react": "^7.4.0",
-    "@storybook/react-vite": "^7.4.0",
-    "@storybook/react-webpack5": "^7.4.0",
-    "@storybook/testing-library": "^0.2.0",
+    "@chromatic-com/storybook": "^3.2.6",
+    "@storybook/addon-essentials": "^8.6.11",
+    "@storybook/addon-interactions": "^8.6.11",
+    "@storybook/addon-links": "^8.6.11",
+    "@storybook/addon-onboarding": "^8.6.11",
+    "@storybook/blocks": "^8.6.11",
+    "@storybook/react": "^8.6.11",
+    "@storybook/react-vite": "^8.6.11",
+    "@storybook/react-webpack5": "^8.6.11",
+    "@storybook/test": "^8.6.11",
     "@types/react": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^6.7.0",
     "@typescript-eslint/parser": "^6.7.0",
@@ -62,10 +64,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.1",
-    "storybook": "^7.4.0",
+    "storybook": "^8.6.11",
     "typescript": "^5.0.1"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.0.17",
     "classnames": "^2.3.2",
     "hast-util-to-text": "^4.0.2",
     "iztro": "2.4.5",
@@ -79,7 +82,8 @@
     "react-tiny-popover": "^8.1.6",
     "rehype-raw": "^7.0.0",
     "remark-frontmatter": "^5.0.0",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "tailwindcss": "^4.0.17"
   },
   "resolutions": {
     "jackspeak": "2.1.1"

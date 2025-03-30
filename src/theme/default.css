@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 .iztro-astrolabe-theme-default {
   --iztro-star-font-size-big: 13px;
   --iztro-star-font-size-small: 12px;
