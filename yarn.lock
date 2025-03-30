@@ -5761,21 +5761,22 @@ istanbul-reports@^3.1.4:
     html-escaper "^2.0.0"
     istanbul-lib-report "^3.0.0"
 
-iztro-hook@1.2.21:
-  version "1.2.21"
-  resolved "https://registry.npmjs.org/iztro-hook/-/iztro-hook-1.2.21.tgz#fbd3cc600ecc8cade01a6da49bc091e7b348bf85"
-  integrity sha512-BF4TaRRgnlTtffs1nYXXF0N/QP+vPSWH8BhvKJ1qGdcKrDElPXJkJC4hpDonnA+JJs/eMVaRaSouRUA6846kQg==
+iztro-hook@1.2.22:
+  version "1.2.22"
+  resolved "https://registry.npmjs.org/iztro-hook/-/iztro-hook-1.2.22.tgz#74e521d338271eb1ddc92c4474a0fb9c8481b28d"
+  integrity sha512-05v/GR9J8DXsuOypAyELdeTzeayA5X2HiHLCg0tqKyi8+NyjyveEkHKddgnaUm7A+7SxiZQHEWR8Sg23nA3RvQ==
   dependencies:
-    iztro "2.4.5"
+    iztro "2.4.8"
 
-iztro@2.4.5:
-  version "2.4.5"
-  resolved "https://registry.npmjs.org/iztro/-/iztro-2.4.5.tgz#7b8687026a87036d1e79de9c7d57fc81defff60f"
-  integrity sha512-+Yl+OaO5K5VPtenwEgIj9ZdvHJW8Vex/cpeJCB+nWZQfNPaaQDk2on5w8NyQrqGfvhro0AoPxkwnAonikGbHiQ==
+iztro@2.4.8:
+  version "2.4.8"
+  resolved "https://registry.npmjs.org/iztro/-/iztro-2.4.8.tgz#4b3abbd343b5bce5af197cc56c3ee8bb80601310"
+  integrity sha512-GSm/i4W5QvtA7qJsLkviDHKn5ueUFfJvu2kaN4IQO7QOA4IRE5J/awPbSiQfvVOvemEBBy8tbUWYiWHh9t3/eQ==
   dependencies:
     dayjs "^1.11.10"
     i18next "^23.5.1"
     lunar-lite "^0.2.3"
+    lunar-typescript "^1.7.8"
 
 jackspeak@2.1.1, jackspeak@^2.0.3:
   version "2.1.1"
@@ -6107,6 +6108,11 @@ lunar-typescript@^1.7.5:
   version "1.7.5"
   resolved "https://registry.npmjs.org/lunar-typescript/-/lunar-typescript-1.7.5.tgz#8a407f9db10aaf896f1477564dbfef741463e245"
   integrity sha512-AlOwYrxHRCR9Plba5TlZY0NVv6aFobmR1gxfiAE1KxjDzBXoDtT2KrsBYCVaErGokiL8qLMS1FNwGPiPRX2a4g==
+
+lunar-typescript@^1.7.8:
+  version "1.7.8"
+  resolved "https://registry.npmjs.org/lunar-typescript/-/lunar-typescript-1.7.8.tgz#f051ea5a3a5f731581ed37fe4638df8b42ce3b52"
+  integrity sha512-i1rjc1eDHUF4k8NfpYxar3ZKtxyVHOGnR+yVTMS8jMy74ugq7KeHI+8T1XIvB3uojpBq6asywe7z25PmI3VLPw==
 
 lz-string@^1.5.0:
   version "1.5.0"
