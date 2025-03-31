@@ -70,6 +70,7 @@
     "typescript": "^5.0.1"
   },
   "dependencies": {
+    "@microflash/remark-callout-directives": "^4.3.3",
     "@radix-ui/react-popover": "^1.1.6",
     "@radix-ui/react-scroll-area": "^1.2.3",
     "@radix-ui/react-slot": "^1.1.2",
@@ -89,6 +90,7 @@
     "react-markdown": "^10.1.0",
     "react-tiny-popover": "^8.1.6",
     "rehype-raw": "^7.0.0",
+    "remark-directive": "^4.0.0",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.0.2",
