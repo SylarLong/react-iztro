@@ -3879,21 +3879,22 @@ isexe@^2.0.0:
   resolved "https://registry.npmmirror.com/isexe/-/isexe-2.0.0.tgz"
   integrity sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==
 
-iztro-hook@1.2.21:
-  version "1.2.21"
-  resolved "https://registry.npmmirror.com/iztro-hook/-/iztro-hook-1.2.21.tgz"
-  integrity sha512-BF4TaRRgnlTtffs1nYXXF0N/QP+vPSWH8BhvKJ1qGdcKrDElPXJkJC4hpDonnA+JJs/eMVaRaSouRUA6846kQg==
+iztro-hook@1.2.23:
+  version "1.2.23"
+  resolved "https://registry.npmmirror.com/iztro-hook/-/iztro-hook-1.2.23.tgz"
+  integrity sha512-tItWWbOh0QOaPn2eJq4ZexzdCaMhPlbo2xxv43HYZXXrcBUwuYg4FSGCUBtgbwebY/XoFAbakCTSuZMrQ3ag+A==
   dependencies:
-    iztro "2.4.5"
+    iztro "2.4.9"
 
-iztro@2.4.5:
-  version "2.4.5"
-  resolved "https://registry.npmmirror.com/iztro/-/iztro-2.4.5.tgz"
-  integrity sha512-+Yl+OaO5K5VPtenwEgIj9ZdvHJW8Vex/cpeJCB+nWZQfNPaaQDk2on5w8NyQrqGfvhro0AoPxkwnAonikGbHiQ==
+iztro@2.4.9:
+  version "2.4.9"
+  resolved "https://registry.npmmirror.com/iztro/-/iztro-2.4.9.tgz"
+  integrity sha512-KfB1AIPqr7/E4dm4c5OytdMZP5jATdQOre0vs/dkC1Gia8IsxWx5bhnk0Yn/am2vFv516uzEa1GD8GIkkipHow==
   dependencies:
     dayjs "^1.11.10"
     i18next "^23.5.1"
     lunar-lite "^0.2.3"
+    lunar-typescript "^1.7.8"
 
 jackspeak@^2.0.3:
   version "2.1.1"
@@ -4126,10 +4127,10 @@ lunar-lite@^0.2.3:
   dependencies:
     lunar-typescript "^1.7.5"
 
-lunar-typescript@^1.7.5:
-  version "1.7.5"
-  resolved "https://registry.npmmirror.com/lunar-typescript/-/lunar-typescript-1.7.5.tgz"
-  integrity sha512-AlOwYrxHRCR9Plba5TlZY0NVv6aFobmR1gxfiAE1KxjDzBXoDtT2KrsBYCVaErGokiL8qLMS1FNwGPiPRX2a4g==
+lunar-typescript@^1.7.5, lunar-typescript@^1.7.8:
+  version "1.7.8"
+  resolved "https://registry.npmmirror.com/lunar-typescript/-/lunar-typescript-1.7.8.tgz"
+  integrity sha512-i1rjc1eDHUF4k8NfpYxar3ZKtxyVHOGnR+yVTMS8jMy74ugq7KeHI+8T1XIvB3uojpBq6asywe7z25PmI3VLPw==
 
 lz-string@^1.5.0:
   version "1.5.0"
