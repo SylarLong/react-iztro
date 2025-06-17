@@ -43,6 +43,12 @@ const meta: Meta<typeof IztroAstrolabe> = {
       control: "inline-radio",
       options: ["lunar", "solar"],
     },
+    astroType: {
+      type: "string",
+      control: "inline-radio",
+      options: ["heaven", "earth", "human"],
+      defaultValue: "heaven",
+    },
     isLeapMonth: { type: "boolean", if: { arg: "birthdayType", eq: "lunar" } },
     fixLeap: { type: "boolean" },
     lang: {
@@ -97,6 +103,7 @@ Iztrolabe.args = {
   isLeapMonth: false,
   fixLeap: true,
   lang: "zh-CN",
+  astroType: "heaven",
   options: {
     yearDivide: "exact",
   },
