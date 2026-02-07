@@ -13,6 +13,12 @@
     "g0 g11 g10 g9";
 }
 
+@media (max-width: 480px) {
+  .iztro-astrolabe {
+    grid-gap: 2px;
+  }
+}
+
 .iztro-star-mutagen {
   font-weight: normal;
   font-size: var(--iztro-star-font-size-small);

@@ -12,6 +12,26 @@
   transition: all 0.25s ease-in-out;
   grid-auto-flow: column;
 }
+
+@media (max-width: 480px) {
+  .iztro-palace {
+    padding: 2px;
+    grid-template-rows: auto auto auto 42px;
+  }
+
+  .iztro-palace-adj {
+    gap: 2px;
+  }
+
+  .iztro-palace-horo-star .stars {
+    gap: 2px;
+  }
+
+  .iztro-palace-fate {
+    gap: 2px;
+    height: 14px;
+  }
+}
 .iztro-palace.focused-palace {
   background-color: #aab8d32f;
 }
