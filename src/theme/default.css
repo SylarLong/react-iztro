@@ -20,6 +20,26 @@
   --iztro-color-hourly: var(--iztro-color-text);
 }
 
+@media (max-width: 480px) {
+  .iztro-astrolabe-theme-default {
+    --iztro-star-font-size-big: 12px;
+    --iztro-star-font-size-small: 10px;
+  }
+
+  .iztro-palace-name .iztro-palace-name-taichi {
+    font-size: 10px;
+    line-height: 12px;
+  }
+
+  .iztro-palace-center-item {
+    line-height: 18px;
+  }
+
+  .iztro-palace-fate span {
+    padding: 0 2px;
+  }
+}
+
 .iztro-astrolabe {
   text-align: left;
 }
