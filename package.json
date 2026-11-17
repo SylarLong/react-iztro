@@ -40,7 +40,7 @@
     "url": "https://github.com/SylarLong/react-iztro/issues",
     "email": "sylarlong@gmail.com"
   },
-  "homepage": "https://docs.iztro.com",
+  "homepage": "https://iztro.com",
   "devDependencies": {
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-react": "^7.22.15",
@@ -67,9 +67,9 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
-    "iztro": "^2.6.0",
-    "iztro-hook": "^1.3.4",
-    "lunar-lite": "^0.2.8"
+    "iztro": "^2.6.5",
+    "iztro-hook": "^1.3.5",
+    "lunar-lite": "^0.2.9"
   },
   "resolutions": {
     "@types/minimatch": "5.1.2",

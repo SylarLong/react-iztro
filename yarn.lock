@@ -5535,22 +5535,22 @@ istanbul-lib-instrument@^5.0.4:
     istanbul-lib-coverage "^3.2.0"
     semver "^6.3.0"
 
-iztro-hook@^1.3.4:
-  version "1.3.4"
-  resolved "https://registry.npmjs.org/iztro-hook/-/iztro-hook-1.3.4.tgz#3873673903865b00a882d783474c7068c046bf3d"
-  integrity sha512-5gQDvoO2kHrXXoOyXRTY3jJQm0G14gS4MKpmNjXRMPUHeOCfGpRpZ93c1la9G0ZZ2nXhJGMRVRQTAHDRs/bI9A==
+iztro-hook@^1.3.5:
+  version "1.3.5"
+  resolved "https://registry.npmjs.org/iztro-hook/-/iztro-hook-1.3.5.tgz#86156d0fa6854d40ff2099d6a46535fe63a2326c"
+  integrity sha512-u+RCTJSvC0VWvWnmTc+ev5ooxixazLybf9EDaCb0GTqASsYCj1FlHK76lUASBZgxdm4vPwT7BRLqhSKRLcx+bQ==
   dependencies:
-    iztro "^2.6.0"
+    iztro "^2.6.5"
 
-iztro@^2.6.0:
-  version "2.6.0"
-  resolved "https://registry.npmjs.org/iztro/-/iztro-2.6.0.tgz#d184b1bf4d8c4e9becff11fa2709378bdbd8191d"
-  integrity sha512-0zN7j+z2UX642yEbraFNILRU+hA5hl1SdTHvyopq0CK68hS1wSxL2zLkStCh6EeEwR+NO0j18amDmpB6bwortg==
+iztro@^2.6.5:
+  version "2.6.5"
+  resolved "https://registry.npmjs.org/iztro/-/iztro-2.6.5.tgz#4627ea5e7f60e178f296293d1d4b2f749b063539"
+  integrity sha512-mObboktSBInBv68+dr6R46cyMUXlYKp9C0jnXBBZtwFuB0PAKeYNYICqelMM1yQ7/rvgd7EUKKfsZ+PVQiBFbA==
   dependencies:
     dayjs "^1.11.10"
     i18next "^23.5.1"
     lunar-lite "^0.2.8"
-    lunar-typescript "^1.7.8"
+    lunar-typescript "^1.8.6"
 
 jackspeak@2.1.1, jackspeak@^3.1.2:
   version "2.1.1"
@@ -5866,7 +5866,14 @@ lunar-lite@^0.2.8:
   dependencies:
     lunar-typescript "^1.8.6"
 
-lunar-typescript@^1.7.8, lunar-typescript@^1.8.6:
+lunar-lite@^0.2.9:
+  version "0.2.9"
+  resolved "https://registry.npmjs.org/lunar-lite/-/lunar-lite-0.2.9.tgz#78c9cc059d73eb6e1a8a0fbe2a60243befd3790f"
+  integrity sha512-yBME4vIT3nohm3yLy0M7zT/yqMNexS3OW3ds1IE4kgcx2JKPO7jOVOC9MOPiAZeyG0XRY/DFI8OkMP3Ol2CAiw==
+  dependencies:
+    lunar-typescript "^1.8.6"
+
+lunar-typescript@^1.8.6:
   version "1.8.6"
   resolved "https://registry.npmjs.org/lunar-typescript/-/lunar-typescript-1.8.6.tgz#9ecadd8610369f800bf46a517da7f6c598f6491d"
   integrity sha512-5Eo4T/cnuXfrgO4k5LCpOGHIUOuz5hCF/IfNv0T29WY2shR36Hiz+ecN9WjnUuxUKhql9gbOkPaQoqLFKtPRNA==

@@ -1,0 +1,82 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag that includes this workflow
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  id-token: write
+
+concurrency:
+  group: release-${{ inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      RELEASE_TAG: ${{ inputs.tag || github.ref_name }}
+
+    steps:
+      - name: Checkout release tag
+        uses: actions/checkout@v6
+        with:
+          ref: refs/tags/${{ env.RELEASE_TAG }}
+          persist-credentials: false
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Validate release tag and package version
+        id: version
+        run: node scripts/check-release.cjs validate
+
+      - name: Install dependencies and build
+        run: yarn install --frozen-lockfile
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Set up npm for trusted publishing
+        run: npm install --global 'npm@^11.5.1'
+
+      - name: Check whether this version is already on npm
+        id: npm
+        run: node scripts/check-release.cjs registry
+
+      - name: Inspect npm package contents
+        if: steps.npm.outputs.published == 'false'
+        run: npm pack --dry-run --ignore-scripts
+
+      - name: Publish to npm using OIDC
+        if: steps.npm.outputs.published == 'false'
+        env:
+          NPM_DIST_TAG: ${{ steps.version.outputs.npm_tag }}
+        run: npm publish --access public --tag "$NPM_DIST_TAG" --registry https://registry.npmjs.org --ignore-scripts
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          NPM_DIST_TAG: ${{ steps.version.outputs.npm_tag }}
+        run: |
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            exit 0
+          fi
+
+          release_options=()
+          if [[ "$NPM_DIST_TAG" == "next" ]]; then
+            release_options+=(--prerelease)
+          fi
+          gh release create "$RELEASE_TAG" --verify-tag --title "$RELEASE_TAG" --generate-notes "${release_options[@]}"
