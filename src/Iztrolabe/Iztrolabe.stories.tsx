@@ -66,6 +66,12 @@ const meta: Meta<typeof IztroAstrolabe> = {
       },
       options: ["zh-CN", "zh-TW", "ja-JP", "ko-KR", "en-US", "vi-VN"],
     },
+    options: {
+      type: "object",
+      control: "object",
+      description:
+        "iztro 星盘配置：language、mutagens、brightness、yearDivide、horoscopeDivide、ageDivide、dayDivide、algorithm。",
+    },
     centerPalaceAlign: {
       type: "boolean",
       description: "中宫居中对齐",
